@@ -1,4 +1,4 @@
-	[Banner](https://github.com/KareemEllis/SWEN_Project/blob/main/images/Branding/repoBanner.jpg?raw=true)
+![Banner](images/Branding/repoBanner.jpg)
 # George Alleyne Hall Web Application
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/KareemEllis/SWEN_Project?color=%23654DC6&style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/KareemEllis/SWEN_Project?color=%234A58C3&style=for-the-badge)
