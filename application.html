@@ -8,6 +8,9 @@
 <body>
     <header>
         <h1>George Alleyne Hall's Application Form</h1>
+        <p>Hi!</p>
+        <p>Thank you for considering the George Alleyne Hall, The University of the West Indies Mona</p>
+        <p>Please complete the form below. After submission ensure to check your emails frequently as offers will be sent out shortly after</p>
     </header>
     <form>
         <h3>Personal Information</h3>
@@ -123,8 +126,27 @@
                     <input type = "email" placeholder = "Email" name = "">
                 </td>
             </tr>
-
-        </table>
+            <tr>
+                <td>
+                    In which family type do you fall?
+                </td>
+                <td>
+                    <input type = "radio" name ="famtype">Single Parent
+                    <input type = "radio" name ="famtype">Nuclear
+                    <input type = "radio" name ="famtype">Extended
+                    <input type = "radio" name ="famtype">Sibling type
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Do you have children?
+                </td>
+                <td>
+                    <input type = "radio" name ="numchildren">Yes
+                    <input type = "radio" name ="numchildren">No
+                </td>
+            </tr>
+            </table>
         <h3>Emergency Contacts</h3>
         <table id = "Emergency contact info">
             <tr>
@@ -209,9 +231,165 @@
                     <input type ="Phone" placeholder = "Telephone number" name = "">
                 </td>
             </tr>
-
         </table>
+        <h3>School Information</h3>
+        <table id ="School">
+            <tr>
+                <td>
+                    Please indicate what applies to you:
+                </td>
+                <td>
+                    <input type = "radio" name = "levelofstudy">Undergraduate
+                    <input type = "radio" name = "levelofstudy">Postgraduate
+                    <input type = "radio" name = "levelofstudy">Norman Manley Law
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Year of study:
+                </td>
+                <td>
+                    <input type = "radio" name = "yearofstudy">First
+                    <input type = "radio" name = "yearofstudy">Second
+                    <input type = "radio" name = "yearofstudy">Third
+                    <input type = "radio" name = "yearofstudy">Fourth
+                    <input type = "radio" name = "yearofstudy">Final
 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name of Programme:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "Programme" name="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Faculty:
+                </td>
+                <td>
+                    <select>
+                        <option>Science and Technology</option>
+                        <option>Medical Sciences</option>
+                        <option>Social Sciences</option>
+                        <option>Humanities and Education</option>
+                        <option>Law</option>
+                        <option>Engineering</option>
+                        <option>Sports</option>
+                        <option>Institute of Gender Studies</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Are you the first in your family to attend university?
+                </td>
+                <td>
+                    <input type ="radio" name ="firstgenstudent">Yes
+                    <input type = "radio" name = "firstgenstudent">No
+                </td>
+            </tr>
+        </table>
+        <h3>Accommodation Information</h3>
+        <table id = "Accommodation">
+            <tr>
+                <td>
+                    Have you ever shared a bathroom or amenities before?
+                </td>
+                <td>
+                    <input type ="radio" name ="accquest1">Yes
+                    <input type ="radio" name ="accquest1">No
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Occupancy type:
+                </td>
+                <td>
+                    <select>
+                        <option>Single</option>
+                        <option>Double</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Roomate preference:
+                </td>
+                <td>
+                    <input type = "radio" name = "gendpref">Male
+                    <input type = "radio" name = "gendpref">Female
+                    <input type = "radio" name = "gendpref">Any
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name of preferred roomate (if any):
+                </td>
+                <td>
+                    <input type = "text" placeholder = "First and last name" name ="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Estimated date of arrival:
+                </td>
+                <td>
+                    <input type ="date" name = "DOA">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Please select your sports interest/s:
+                </td>
+                <td>
+                    <input type = "checkbox" name ="interest">Football
+                    <input type = "checkbox" name ="interest">Cricket
+                    <input type = "checkbox" name ="interest">Badminton
+                    <input type = "checkbox" name ="interest">Volley Ball
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "checkbox" name ="interest">Netball
+                    <input type = "checkbox" name ="interest">Swimming
+                    <input type = "checkbox" name ="interest">Table Tennis
+                    <input type = "checkbox" name ="interest">Track and field
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "checkbox" name ="interest">Basketball
+                    <input type = "checkbox" name ="interest">Hockey
+                    <input type = "checkbox" name ="interest">Lawn Tennis
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Select your Performing arts interest/s:
+                </td>
+                <td>
+                    <input type = "checkbox" name ="artinterest">Dance
+                    <input type = "checkbox" name ="artinterest">Speech
+                    <input type = "checkbox" name ="artinterest">Choir
+                    <input type = "checkbox" name ="artinterest">Drama
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Do you play a musical instrument?
+                </td>
+                <td>
+                    <input type ="radio" name = "instrument">Yes
+                    <input type ="radio" name = "instrument">No
+                </td>
+            </tr>
+        </table>
+        <button type = "review" class="btn" id = "review">Next</button>
     </form>
 </body>
 </html>
