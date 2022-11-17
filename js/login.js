@@ -17,7 +17,7 @@ window.addEventListener('load', ()=>{
         passOK = false
 
         if(uname == ""){
-            username_msg.textContent = "Enter a username"
+            username_msg.innerHTML = "<i class=\"material-icons\">&#xe000;</i>Enter a username"
             unameOK = false
             username.classList.add('error')
         }
@@ -28,7 +28,7 @@ window.addEventListener('load', ()=>{
         }
 
         if(pass == ""){
-            password_msg.textContent = "Enter a password"
+            password_msg.innerHTML = "<i class=\"material-icons\">&#xe000;</i>Enter a password"
             passOK = false
             password.classList.add('error')
         }
