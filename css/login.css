@@ -3,27 +3,44 @@
     -webkit-box-sizing: border-box; 
      box-sizing: border-box; 
 }
+html{
+    height: 100%;
+}
 
 body{
-    background-color: lightcoral;
     margin: 0;
+    height: 100%;
+
+    background-image: url(../images/hall2.jpg);
+    background-color: red;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+section{
+    background: linear-gradient(90deg, rgba(100,78,198,0.85) 0%, rgba(2,119,188,0.85) 100%);
+    height: 100%;
 }
 
 main{
-    background-color: white;
+    background: linear-gradient(90deg, rgba(253,252,255,0.5) 0%, rgba(212,212,212,0.5) 100%);
+    backdrop-filter: blur(10px);
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    min-width: 400px;
-    padding: 60px 60px;
+    min-width: 450px;
+    padding: 40px 40px;
     text-align: center;
 
-    border: 1px solid black;
+    border: 1px solid rgb(100,78,198);
     border-radius: 10px;
 }
-
+img{
+    width: 150px;
+}
 .data-input{
     text-align: left;
     display: flex;
@@ -31,14 +48,25 @@ main{
     margin: 20px 0;
 }
 input{
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     border: 1px solid black;
 }
 
 button{
-    padding: 8px;
+    padding: 10px;
     width: 85px;
+    border-radius: 5px;
+    border: 0.2px solid rgb(147, 147, 147);
+    background-color: white;
+
+    transition: 0.2s;
+}
+button:hover{
+    background-color: rgb(100,78,198);
+    color: white;
+    border: 0.2px solid rgb(140, 123, 216);
+    padding: 10px 15px;
 }
 input, label, div{
     margin-bottom: 10px;
@@ -54,11 +82,13 @@ h2{
 }
 
 .data-input div{
-    color: red;
+    color: rgb(175, 0, 0);
+    display: flex;
+    align-items: center;
 }
 
 .error{
-    border: 1px solid red;
+    border: 2px solid rgb(204, 0, 0);
 }
 
 @media screen and (max-width: 600px){
