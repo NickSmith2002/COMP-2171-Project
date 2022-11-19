@@ -18,11 +18,11 @@ class Application {
     private $educationInfo;
     private $roomType;
     private $roommatePreference;
-    private $roommateName;
+
     
     public function __construct($status, $firstName, $lastName, $middleName, $dob, $nationality, $gender, $maritialStatus, $familyType, $homeAddress, $mailAddress, $emailAddress,
                                 $idNumber, $contactName, $contactRelationship, $contactTelephone, $contactAddress, $contactEmail, $levelOfStudy, $yearofStudy, $programme, $facultyName,
-                                $schoolName, $roomType, $roommatePreference, $roommateName)
+                                $schoolName, $roomType, $roommatePreference)
     {
         $this->status              = $status;
         $this->firstName           = $firstName;
@@ -41,7 +41,6 @@ class Application {
         $this->educationInfo       = array("level"=>$levelOfStudy, "year"=>$yearofStudy, "programme"=>$programme, "faculty"=>$facultyName, "school"=>$schoolName);
         $this->roomType            = $roomType;
         $this->roommatePreference  = $roommatePreference;
-        $this->roommateName        = $roommateName;
     }
   
     // Methods
@@ -117,11 +116,6 @@ class Application {
     {
       return $this->roommatePreference;
     }
-    public function get_roommateName()
-    {
-      return $this->roommateName;
-    }
-
 
     //setters
     public function set_status($status) 
