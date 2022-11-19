@@ -14,4 +14,4 @@ This is a software Engineering project for COMP2140 Software Engineering course
 | Kareem Ellis | [LinkedIn](https://www.linkedin.com/in/kareem-ellis-1b14a318b/), [Github](https://github.com/KareemEllis) |
 | Alexia Brooks | [LinkedIn](https://www.linkedin.com/feed/?nis=true), [Github](https://github.com/LexxiaB) |
 | Nicholas Smith | [LinkedIn](https://www.linkedin.com/feed/?nis=true), [Github](https://github.com/NickSmith2002) |
-| Leon Fray | [LinkedIn](https://www.linkedin.com/feed/?nis=true), [Github](https://github.com/LeonFray) |
+| Leon Fray | [LinkedIn](https://www.linkedin.com/in/nicholas-w-smith-379627232/), [Github](https://github.com/LeonFray) |

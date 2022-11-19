@@ -5,11 +5,12 @@ window.addEventListener('load', ()=>{
     const password_msg = document.querySelector('.password-msg')
 
     const loginBtn = document.querySelector('button')
-
+    let spinner = '<div class="loader"></div>'
+    
 
     loginBtn.addEventListener('click', (event)=>{
         event.preventDefault()
-
+        
         uname = username.value.trim()
         pass = password.value.trim()
 
@@ -38,16 +39,52 @@ window.addEventListener('load', ()=>{
             password.classList.remove('error')
         }
 
+        
         if(unameOK & passOK){
-            fetch(url)
+            let formData = new FormData()
+            formData.append('username', uname)
+            formData.append('password', pass)
+
+            
+            loginBtn.innerHTML = spinner
+
+            fetch('../php/login.php', {
+                method: 'POST',
+                body: formData
+            })
             .then(response => {
                 if(response.ok){return response.text()}
                 else{return Promise.reject('Something was wrong with fetch request!')}
             })
             .then(data => {
+                if(data == '1'){
+                    window.location.replace("https://github.com/KareemEllis/SWEN_Project");
+                }
+                else if(data == '0'){
+                    //Just adding the error message to the password error box since it's already at the bottom
+                    password_msg.innerHTML = "<i class=\"material-icons\">&#xe000;</i>Couldn't find your account"
+                    username.classList.add('error')
+                    password.classList.add('error')
+                    loginBtn.innerHTML = 'Log in'
+                }
+                else if(data == '-1'){
+                    password_msg.innerHTML = "<i class=\"material-icons\">&#xe000;</i>Username or Password incorrect"
+                    username.classList.add('error')
+                    password.classList.add('error')
+                    loginBtn.innerHTML = 'Log in'
+                }
+                else{
+                    console.log(data)
+                    alert('Unable to Connect')
+                    loginBtn.innerHTML = 'Log in'
+                }
 
             })
-            .catch(error => console.log(`ERROR HAS OCCURRED WITH LOGIN`))
+            .catch(error => {
+                console.log(`ERROR HAS OCCURRED WITH LOGIN`)
+                loginBtn.innerHTML = 'Log in'
+            })
+            
         }
     })
 })
