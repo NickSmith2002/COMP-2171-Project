@@ -2,7 +2,7 @@
 
 class ApplicationModel extends DB {
     
-    public function getApplication($applicationID) {
+    protected function getApplication($applicationID) {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE ApplicationID = :id");
         $stmt->bindValue(':id', $applicationID, PDO::PARAM_INT);
         $stmt->execute();
@@ -11,7 +11,7 @@ class ApplicationModel extends DB {
         return $result;
     }
 
-    public function getAllApplications() {
+    protected function getAllApplications() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants");
         $stmt->execute();
 
@@ -19,12 +19,12 @@ class ApplicationModel extends DB {
         return $result;
     }
 
-    public function changeStatus($newStatus, $applicationID) {
+    protected function changeStatus($newStatus, $applicationID) {
         $stmt = $this->connect()->prepare("UPDATE Applicants SET Status = $newStatus WHERE ApplicationID = $applicationID;");
         $stmt->execute();
     }
 
-    public function addApplication($firstName, $lastName, $middleInitial, $DOB, $nationality, 
+    protected function addApplication($firstName, $lastName, $middleInitial, $DOB, $nationality, 
                                       $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
                                       $emailAddress, $idNumber, $contactName, $contactRelationship, 
                                       $contactTelephone, $contactAddress, $contactEmail, $levelOfStudy, 
@@ -62,7 +62,7 @@ class ApplicationModel extends DB {
         $stmt->execute();
     }
 
-    public function deleteApplication($applicationID) {
+    protected function deleteApplication($applicationID) {
         $stmt = $this->connect()->prepare("DELETE FROM Applicants WHERE ApplicationID = $applicationID;");
         $stmt->execute();
     }
