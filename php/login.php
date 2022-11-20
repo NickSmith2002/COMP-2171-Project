@@ -1,21 +1,14 @@
 <?php
-    $host = 'db4free.net';
-    $username = 'swenstar';
-    $password = 'ihatecomsci123';
-    $dbname = 'georgealleyne';
+    include 'classAutoloader.php';
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $inputUsername = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $inputPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
         try{
-            $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-            $stmt = $conn->prepare("SELECT id, username, Password  FROM Users WHERE Username = :username");
-            $stmt->bindValue(':username', $inputUsername, PDO::PARAM_STR);
-            $stmt->execute();
+            $userContr = new UserController();
 
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $conn = null;
+            $result = $userContr->findUser($inputUsername);
 
             if(count($result) > 0){
                 

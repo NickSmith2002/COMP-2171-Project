@@ -74,7 +74,6 @@ window.addEventListener('load', ()=>{
                     loginBtn.innerHTML = 'Log in'
                 }
                 else{
-                    console.log(data)
                     alert('Unable to Connect')
                     loginBtn.innerHTML = 'Log in'
                 }
