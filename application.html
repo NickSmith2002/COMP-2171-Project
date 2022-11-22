@@ -11,13 +11,13 @@
 
 </head>
 <body>
+    <form>
     <header>
         <h1>George Alleyne Hall's Application Form</h1>
         <p>Hi!</p>
         <p>Thank you for considering the George Alleyne Hall, The University of the West Indies Mona</p>
         <p>Please complete the form below. After submission ensure to check your emails frequently as offers will be sent out shortly after</p>
     </header>
-    <form>
         <h3>Personal Information</h3>
         <table id="Personalinfo">
             <tr>
@@ -25,7 +25,7 @@
                     First Name:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "First name" firstName = "">
+                    <input type = "text" placeholder = "First name" firstName = "" id ="Fname">
                 </td>
             </tr>
             <tr>
@@ -33,7 +33,7 @@
                     Middle Initial:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "Initial" initial = "">
+                    <input type = "text" placeholder = "Initial" initial = "" id = "midtial">
                 </td>
             </tr>
             <tr>
@@ -41,7 +41,7 @@
                     Last Name: 
                 </td>
                 <td>
-                    <input type = "text" placeholder = "Last name" lastName ="">
+                    <input type = "text" placeholder = "Last name" lastName ="" id = "Lname">
                 </td>
             </tr>
             <tr>
@@ -49,7 +49,7 @@
                     ID Number:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "ID" name ="">
+                    <input type = "text" placeholder = "ID" name ="" id = "ID">
                 </td>
             </tr>
             <tr>
@@ -57,8 +57,8 @@
                     Gender:
                 </td>
                 <td>
-                    <input type ="radio" name = "Gender">Male
-                    <input type = "radio" name = "Gender">Female
+                    <input type ="radio" name = "Gender" id = "gen">Male
+                    <input type = "radio" name = "Gender" id = "gen2">Female
                 </td>
             </tr>
             <tr>
@@ -66,7 +66,7 @@
                     Date of Birth:
                 </td>
                 <td>
-                    <input type = "date" name = "DOB">
+                    <input type = "date" name = "DOB" id = "Dateofbirth">
                 </td>
             </tr>
             <tr>
@@ -74,7 +74,7 @@
                     Nationality:
                 </td>
                 <td>
-                    <input type ="text" placeholder = "Nationality" name = "">
+                    <input type ="text" placeholder = "Nationality" name = "" id = "nation">
                 </td>
             </tr>
             <tr>
@@ -82,12 +82,11 @@
                     Marital Status:
                 </td>
                 <td>
-                    <input type ="radio" name = "marStatus">Single
-                    <input type = "radio" name = "marStatus">Married
-                    <input type ="radio" name = "marStatus">Divorced
-                    <input type = "radio" name = "marStatus">Widowed
-                    <input type ="radio" name = "marStatus">Single
-                    <input type = "radio" name = "marStatus">Common Law
+                    <input type ="radio" name = "marStatus" id = "single">Single
+                    <input type = "radio" name = "marStatus" id = "married">Married
+                    <input type ="radio" name = "marStatus" id = "divorced">Divorced
+                    <input type = "radio" name = "marStatus" id = "widow">Widowed
+                    <input type = "radio" name = "marStatus" id = "common">Common Law
                 </td>
             </tr>
             <tr>
@@ -95,16 +94,7 @@
                     Telephone number:
                 </td>
                 <td>
-                    <select>
-                        <option>876</option>
-                        <option>658</option>
-                        <option>246</option>
-                        <option>758</option>
-                        <option>868</option>
-                        <option>869</option>
-                        <option>268</option>
-                    </select>
-                    <input type ="Phone" placeholder = "Telephone number" name = "">
+                    <input type ="Phone" placeholder = "Telephone number" name = "" id = "telnum">
                 </td>
             </tr>
             <tr>
@@ -112,7 +102,7 @@
                     Home Address:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "Address" name = "">
+                    <input type = "text" placeholder = "Address" name = "" id = "home">
                 </td>
             </tr>
             <tr>
@@ -120,7 +110,7 @@
                     Mailing Address:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "If different from home" name ="">
+                    <input type = "text" placeholder = "If different from home" name ="" id = "mail">
                 </td>
             </tr>
             <tr>
@@ -128,7 +118,7 @@
                     Email Address:
                 </td>
                 <td>
-                    <input type = "email" placeholder = "Email" name = "">
+                    <input type = "email" placeholder = "Email" name = "" id = "email">
                 </td>
             </tr>
             <tr>
@@ -136,10 +126,10 @@
                     In which family type do you fall?
                 </td>
                 <td>
-                    <input type = "radio" name ="famtype">Single Parent
-                    <input type = "radio" name ="famtype">Nuclear
-                    <input type = "radio" name ="famtype">Extended
-                    <input type = "radio" name ="famtype">Sibling type
+                    <input type = "radio" name ="famtype" id = "singparent">Single Parent
+                    <input type = "radio" name ="famtype" id = "nuclear">Nuclear
+                    <input type = "radio" name ="famtype" id = "extended">Extended
+                    <input type = "radio" name ="famtype" id = "sibling">Sibling type
                 </td>
             </tr>
             <tr>
@@ -147,8 +137,8 @@
                     Do you have children?
                 </td>
                 <td>
-                    <input type = "radio" name ="numchildren">Yes
-                    <input type = "radio" name ="numchildren">No
+                    <input type = "radio" name ="numchildren" id = "childrenyes">Yes
+                    <input type = "radio" name ="numchildren" id = "childrenno">No
                 </td>
             </tr>
             </table>
@@ -159,40 +149,31 @@
                     Emergency Contact 1:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "First and last name" name ="">
+                    <input type = "text" placeholder = "First and last name" name ="" id = "contname1">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type = "text" placeholder = "Relationship" name ="">
+                    <input type = "text" placeholder = "Relationship" name ="" id = "relationship">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type = "text" placeholder = "Home address" name ="">
+                    <input type = "text" placeholder = "Home address" name ="" id = "contaddress">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type = "email" placeholder = "Email address" name ="">
+                    <input type = "email" placeholder = "Email address" name ="" id = "contemail">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <select>
-                        <option>876</option>
-                        <option>658</option>
-                        <option>246</option>
-                        <option>758</option>
-                        <option>868</option>
-                        <option>869</option>
-                        <option>268</option>
-                    </select>
-                    <input type ="Phone" placeholder = "Telephone number" name = "">
+                    <input type ="Phone" placeholder = "Telephone number" name = "" id = "contnumber">
                 </td>
             </tr>
             <tr>
@@ -200,39 +181,30 @@
                     Emergency Contact 2:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "First and last name" name ="">
+                    <input type = "text" placeholder = "First and last name" name ="" id = "contname2">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type = "text" placeholder = "Relationship" name ="">
+                    <input type = "text" placeholder = "Relationship" name ="" id = "relationship2">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type = "text" placeholder = "Home address" name ="">
+                    <input type = "text" placeholder = "Home address" name ="" id = conthome2>
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type = "email" placeholder = "Email address" name ="">
+                    <input type = "email" placeholder = "Email address" name ="" id = "contemail2">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <select>
-                        <option>876</option>
-                        <option>658</option>
-                        <option>246</option>
-                        <option>758</option>
-                        <option>868</option>
-                        <option>869</option>
-                        <option>268</option>
-                    </select>
                     <input type ="Phone" placeholder = "Telephone number" name = "">
                 </td>
             </tr>
@@ -396,8 +368,9 @@
         </table>
         <button type = "review" class="btn" id = "review">Next</button>
     </form>
-    <div class = "review">
-        
+    <div class = "reviewForm hidden">
+        <h1>Review Application</h1>
+
     </div>
 </body>
 </html>
