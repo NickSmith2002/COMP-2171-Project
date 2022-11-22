@@ -19,6 +19,30 @@ class ApplicationModel extends DB {
         return $result;
     }
 
+    protected function getAcceptedApplications() {
+        $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE Status = 'Accepted'");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    
+    protected function getRejectedApplications() {
+        $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE Status = 'Rejected'");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    protected function getPendingApplications() {
+        $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE Status = 'Pending'");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     protected function changeStatus($newStatus, $applicationID) {
         $stmt = $this->connect()->prepare("UPDATE Applicants SET Status = $newStatus WHERE ApplicationID = $applicationID;");
         $stmt->execute();

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Applications - George Alleyne Hall</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../css/processApplication.css">
+    <link rel="shortcut icon" href="../images/Branding/favicon.ico" type="image/x-icon">
+    <script src="../js/processApplication.js"></script>
+</head>
+<body>
+
+    <nav class="container">
+        <a href="#">Dashboard</a>
+        <a href="#">Firstname Lastname</a>
+        <button>Log Out</button>
+    </nav>
+
+    <header class="container">
+        <img src="../images/Branding/logo.png" alt="George Alleyne hall Logo">
+        <h1>Application Processing</h1>
+    </header>
+
+    <section class="container views">
+        <button class="view-accept">View Accepted</button>
+        <button class="view-reject">View Rejected</button>
+        <button class="view-pending">View Pending</button>
+        <button class="view-all">View All</button>
+    </section>
+
+    <main class="container">
+        <div class="controls">
+            <div class="sort">
+                <div>
+                    <h4>Sort by</h4>
+                </div>
+                <div class="items">
+                    <div class="dropdown">
+                        <input type="text" class="textBox" placeholder="Dropdown" readonly>
+                        <div class="option">
+                            <div onclick="sortShow('ID Number')">ID Number</div>
+                            <div onclick="sortShow('First Name')">First Name</div>
+                            <div onclick="sortShow('Last Name')">Last Name</div>
+                            <div onclick="sortShow('Status')">Status</div>
+                        </div>
+                    </div>
+
+                    <button class="sort-btn"><i class="material-icons">arrow_upward</i></button>
+                    <button class="sort-btn"><i class="material-icons">arrow_downward</i></button>
+                </div>
+                
+            </div>
+            <div>
+                <input type="text" name="searchbar" id="searchBar">
+            </div>
+        </div>
+        <div id="result">
+
+        </div>
+    </main>
+
+</body>
+</html>

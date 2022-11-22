@@ -1,0 +1,136 @@
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+body{
+    margin: 0;
+}
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+h1, h2, h3, h4, h5, p{
+    margin: 0;
+}
+
+
+/******NAVIGATION******/
+nav{
+    text-align: right;
+}
+nav a{
+
+}
+nav *{
+    margin-left: 20px;
+}
+
+/******HEADER******/
+header{
+    text-align: center;
+}
+header img{
+    width: 200px;
+}
+header h1{
+
+}
+
+/************COMPONENTS***************/
+
+/******View Buttons******/
+.views{
+    text-align: center;
+}
+.views button{
+    margin: 0 5px;
+    width: 120px;
+    height: 50px;
+}
+
+
+/*******TABLE*******/
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.sort .items{
+    display: flex;
+}
+
+.sort .items *{
+    
+}
+#searchBar{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid purple;
+}
+
+
+/*********DROP DOWN*********/
+.dropdown{
+    position: relative;
+    width: 150px;
+    height: 40px;
+
+}
+.dropdown::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid black;
+    right: 20px;
+    top: 11px;
+    z-index: 9999;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+.dropdown.active::before{
+    transform: rotate(-225deg);
+    top: 17px;
+}
+
+.dropdown input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(51, 214, 51);
+}
+
+.dropdown .option{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid green;
+    overflow: hidden;
+    display: none;
+    z-index: 10000;
+}
+.dropdown.active .option{
+    display: block;
+}
+
+.dropdown .option div{
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.dropdown .option div:hover{
+    background-color: bisque;
+}
+
