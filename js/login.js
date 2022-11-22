@@ -58,7 +58,7 @@ window.addEventListener('load', ()=>{
             })
             .then(data => {
                 if(data == '1'){
-                    window.location.replace("https://github.com/KareemEllis/SWEN_Project");
+                    window.location.replace("../html/processApplication.html");
                 }
                 else if(data == '0'){
                     //Just adding the error message to the password error box since it's already at the bottom
