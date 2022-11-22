@@ -57,8 +57,8 @@
                     Gender:
                 </td>
                 <td>
-                    <input type ="radio" name = "Gender" id = "gen">Male
-                    <input type = "radio" name = "Gender" id = "gen2">Female
+                    <input type ="radio" name = "Gender" id = "gen" value = "Male">Male
+                    <input type = "radio" name = "Gender" id = "gen2" value = "Female">Female
                 </td>
             </tr>
             <tr>
@@ -205,7 +205,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <input type ="Phone" placeholder = "Telephone number" name = "">
+                    <input type ="Phone" placeholder = "Telephone number" name = "" id = "contnumber2">
                 </td>
             </tr>
         </table>
@@ -216,9 +216,9 @@
                     Please indicate what applies to you:
                 </td>
                 <td>
-                    <input type = "radio" name = "levelofstudy">Undergraduate
-                    <input type = "radio" name = "levelofstudy">Postgraduate
-                    <input type = "radio" name = "levelofstudy">Norman Manley Law
+                    <input type = "radio" name = "levelofstudy" id = "undergrad">Undergraduate
+                    <input type = "radio" name = "levelofstudy" id = "grad">Postgraduate
+                    <input type = "radio" name = "levelofstudy" id = "lawschool">Norman Manley Law
                 </td>
             </tr>
             <tr>
@@ -226,11 +226,11 @@
                     Year of study:
                 </td>
                 <td>
-                    <input type = "radio" name = "yearofstudy">First
-                    <input type = "radio" name = "yearofstudy">Second
-                    <input type = "radio" name = "yearofstudy">Third
-                    <input type = "radio" name = "yearofstudy">Fourth
-                    <input type = "radio" name = "yearofstudy">Final
+                    <input type = "radio" name = "yearofstudy" id = "first">First
+                    <input type = "radio" name = "yearofstudy" id = "second">Second
+                    <input type = "radio" name = "yearofstudy" id = "third">Third
+                    <input type = "radio" name = "yearofstudy" id = "fourth">Fourth
+                    <input type = "radio" name = "yearofstudy" id = "final">Final
 
                 </td>
             </tr>
@@ -239,7 +239,7 @@
                     Name of Programme:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "Programme" name="">
+                    <input type = "text" placeholder = "Programme" name="" id = "programme">
                 </td>
             </tr>
             <tr>
@@ -247,7 +247,7 @@
                     Faculty:
                 </td>
                 <td>
-                    <select>
+                    <select id = "faculty">
                         <option>Science and Technology</option>
                         <option>Medical Sciences</option>
                         <option>Social Sciences</option>
@@ -264,8 +264,8 @@
                     Are you the first in your family to attend university?
                 </td>
                 <td>
-                    <input type ="radio" name ="firstgenstudent">Yes
-                    <input type = "radio" name = "firstgenstudent">No
+                    <input type ="radio" name ="firstgenstudent" id = "firstgenyes">Yes
+                    <input type = "radio" name = "firstgenstudent" id = "firstgenno">No
                 </td>
             </tr>
         </table>
@@ -276,8 +276,8 @@
                     Have you ever shared a bathroom or amenities before?
                 </td>
                 <td>
-                    <input type ="radio" name ="accquest1">Yes
-                    <input type ="radio" name ="accquest1">No
+                    <input type ="radio" name ="accquest1" id = "yesshare">Yes
+                    <input type ="radio" name ="accquest1" id = "noshare">No
                 </td>
             </tr>
             <tr>
@@ -285,7 +285,7 @@
                     Occupancy type:
                 </td>
                 <td>
-                    <select>
+                    <select id = "roomtype">
                         <option>Single</option>
                         <option>Double</option>
                     </select>
@@ -296,9 +296,9 @@
                     Roomate preference:
                 </td>
                 <td>
-                    <input type = "radio" name = "gendpref">Male
-                    <input type = "radio" name = "gendpref">Female
-                    <input type = "radio" name = "gendpref">Any
+                    <input type = "radio" name = "gendpref" id = "malepref">Male
+                    <input type = "radio" name = "gendpref" id = "femalepref">Female
+                    <input type = "radio" name = "gendpref" id = "anypref">Any
                 </td>
             </tr>
             <tr>
@@ -306,7 +306,7 @@
                     Name of preferred roomate (if any):
                 </td>
                 <td>
-                    <input type = "text" placeholder = "First and last name" name ="">
+                    <input type = "text" placeholder = "First and last name" name ="" id = "matename">
                 </td>
             </tr>
             <tr>
@@ -314,7 +314,7 @@
                     Estimated date of arrival:
                 </td>
                 <td>
-                    <input type ="date" name = "DOA">
+                    <input type ="date" name = "DOA" id = "DOA">
                 </td>
             </tr>
             <tr>
@@ -322,27 +322,27 @@
                     Please select your sports interest/s:
                 </td>
                 <td>
-                    <input type = "checkbox" name ="interest">Football
-                    <input type = "checkbox" name ="interest">Cricket
-                    <input type = "checkbox" name ="interest">Badminton
-                    <input type = "checkbox" name ="interest">Volley Ball
+                    <input type = "checkbox" name ="interest" id = "football">Football
+                    <input type = "checkbox" name ="interest" id = "cricket">Cricket
+                    <input type = "checkbox" name ="interest" id = "badminton">Badminton
+                    <input type = "checkbox" name ="interest" id = "volley">Volley Ball
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type = "checkbox" name ="interest">Netball
-                    <input type = "checkbox" name ="interest">Swimming
-                    <input type = "checkbox" name ="interest">Table Tennis
-                    <input type = "checkbox" name ="interest">Track and field
+                    <input type = "checkbox" name ="interest" id = "netball">Netball
+                    <input type = "checkbox" name ="interest" id = "swimming">Swimming
+                    <input type = "checkbox" name ="interest" id = "tennis">Table Tennis
+                    <input type = "checkbox" name ="interest" id = "track">Track and field
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type = "checkbox" name ="interest">Basketball
-                    <input type = "checkbox" name ="interest">Hockey
-                    <input type = "checkbox" name ="interest">Lawn Tennis
+                    <input type = "checkbox" name ="interest" id = "basketball">Basketball
+                    <input type = "checkbox" name ="interest" id = "hockey">Hockey
+                    <input type = "checkbox" name ="interest" id = "lawn">Lawn Tennis
                 </td>
             </tr>
             <tr>
@@ -350,10 +350,10 @@
                     Select your Performing arts interest/s:
                 </td>
                 <td>
-                    <input type = "checkbox" name ="artinterest">Dance
-                    <input type = "checkbox" name ="artinterest">Speech
-                    <input type = "checkbox" name ="artinterest">Choir
-                    <input type = "checkbox" name ="artinterest">Drama
+                    <input type = "checkbox" name ="artinterest" id = "dance">Dance
+                    <input type = "checkbox" name ="artinterest" id = "speech">Speech
+                    <input type = "checkbox" name ="artinterest" id = "choir">Choir
+                    <input type = "checkbox" name ="artinterest" id = "drama">Drama
                 </td>
             </tr>
             <tr>
@@ -361,8 +361,8 @@
                     Do you play a musical instrument?
                 </td>
                 <td>
-                    <input type ="radio" name = "instrument">Yes
-                    <input type ="radio" name = "instrument">No
+                    <input type ="radio" name = "instrument" id = "playyes">Yes
+                    <input type ="radio" name = "instrument" id = "playno">No
                 </td>
             </tr>
         </table>
