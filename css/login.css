@@ -16,6 +16,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     
+    font-family: 'Montserrat', sans-serif;
 }
 section{
     background: linear-gradient(90deg, rgba(7,12,41,0.97) 0%, rgba(58,125,132,0.90) 50%, rgba(37,103,151,0.97) 100%);

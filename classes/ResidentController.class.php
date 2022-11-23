@@ -3,27 +3,27 @@
 class ResidentController extends ResidentModel {
 
     public function findResidentByID($id) {
-        $this->getResidentById($id);
+        return $this->getResidentById($id);
     }
 
     public function findResidentByName($name) {
-        $this->getResidentsByName($name);
+        return $this->getResidentsByName($name);
     }
 
     public function findResidentByEmail($email) {
-        $this->getResidentByEmail($email);
+        return $this->getResidentByEmail($email);
     }
 
     public function findAllResidents() {
-        $this->getAllResidents();
+        return $this->getAllResidents();
     }
 
     public function changeResidentRoom($newRoomNumber, $residentID){
-        $this->changeRoom($newRoomNumber, $residentID);
+        return $this->changeRoom($newRoomNumber, $residentID);
     }
 
     public function removeResident($id){
-        $this->deleteResident($id);
+        return $this->deleteResident($id);
     }
 
     public function addNewResident($firstName, $lastName, $middleInitial, $residentID, $position, $DOB, $nationality, 

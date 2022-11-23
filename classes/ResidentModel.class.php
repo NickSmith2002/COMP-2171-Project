@@ -3,7 +3,7 @@
 class ResidentModel extends DB {
 
     protected function getResidentById($id) {
-        $stmt = $this->connect()->prepare("SELECT * FROM Residents WHERE Resident ID = :id OR ID Number = :id");
+        $stmt = $this->connect()->prepare("SELECT * FROM Residents WHERE `Resident ID` = :id OR `ID Number` = :id");
         $stmt->bindValue(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
 

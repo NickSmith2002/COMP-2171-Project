@@ -2,12 +2,29 @@
 
 class ApplicationModel extends DB {
     
-    protected function getApplication($applicationID) {
+    protected function getApplication($data) {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE ApplicationID = :id");
-        $stmt->bindValue(':id', $applicationID, PDO::PARAM_INT);
+        $stmt->bindValue(':id', $data, PDO::PARAM_STR);
         $stmt->execute();
 
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        if(count($result) == 0){
+            $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE `First Name` = :name");
+            $stmt->bindValue(':name', $data, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if(count($result) == 0){
+                $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE `Last Name` = :name");
+                $stmt->bindValue(':name', $data, PDO::PARAM_STR);
+                $stmt->execute();
+
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+
+        }
         return $result;
     }
 
@@ -43,8 +60,42 @@ class ApplicationModel extends DB {
         return $result;
     }
 
+    //SORTING FUNCTIONS
+    protected function getAllAscendingID() {
+        $stmt = $this->connect()->prepare("SELECT * FROM Applicants ORDER BY ApplicationID ASC");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    protected function getAllDescendingID() {
+        $stmt = $this->connect()->prepare("SELECT * FROM Applicants ORDER BY ApplicationID DESC");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    protected function getAllAscendingName() {
+        $stmt = $this->connect()->prepare("SELECT * FROM Applicants ORDER BY `First Name` ASC");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    protected function getAllDescendingName() {
+        $stmt = $this->connect()->prepare("SELECT * FROM Applicants ORDER BY `First Name` DESC");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     protected function changeStatus($newStatus, $applicationID) {
-        $stmt = $this->connect()->prepare("UPDATE Applicants SET Status = $newStatus WHERE ApplicationID = $applicationID;");
+        $stmt = $this->connect()->prepare("UPDATE Applicants SET Status = :status WHERE ApplicationID = :id");
+        $stmt->bindValue(':status', $newStatus, PDO::PARAM_STR);
+        $stmt->bindValue(':id', $applicationID, PDO::PARAM_STR);
+
         $stmt->execute();
     }
 
