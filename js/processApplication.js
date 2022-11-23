@@ -5,16 +5,13 @@ window.addEventListener('load', ()=> {
     const viewRejectedBtn = document.querySelector('.view-reject')
     const viewPendingBtn = document.querySelector('.view-pending')
     const viewAllBtn = document.querySelector('.view-all')
+    const sortDropDown = document.querySelector(".sort .dropdown")
     const sortAscend = document.querySelector('.ascend')
     const sortDescend = document.querySelector('.descend')
     const sortOption = document.querySelector('.sort .dropdown input')
     const searchBar = document.querySelector('#searchBar')
     const user = document.querySelector('#user')
     const logout = document.querySelector("#logout")
-
-    let dropDowns
-
-    console.log(`DROPDOWNS: ${dropDowns}`)
     
     //SORT FUNCTIONS
     sortShow = (text) => {
@@ -77,7 +74,7 @@ window.addEventListener('load', ()=> {
     })
     .then(data => {
         resultContainer.innerHTML = data
-        dropDowns = document.querySelectorAll('.dropdown')
+        dropDowns = document.querySelectorAll('table .dropdown')
 
         dropDowns.forEach(dropDown => {
             dropDown.addEventListener('click', ()=>{
@@ -148,6 +145,9 @@ window.addEventListener('load', ()=> {
     })
 
 
+    sortDropDown.addEventListener('click', ()=>{
+        sortDropDown.classList.toggle('active');
+    })
 
     //DISPLAYING DIFFERENT TABLE TYPES
     //DISPLAY THE TABLE OF ACCEPTED APPLICATIONS
@@ -160,7 +160,7 @@ window.addEventListener('load', ()=> {
         })
         .then(data => {
             resultContainer.innerHTML = data
-            dropDowns = document.querySelectorAll('.dropdown')
+            let dropDowns = document.querySelectorAll('table .dropdown')
 
             dropDowns.forEach(dropDown => {
                 dropDown.addEventListener('click', ()=>{
@@ -175,6 +175,8 @@ window.addEventListener('load', ()=> {
         })
     })
 
+
+
     //DISPLAY THE TABLE OF REJECTED APPLICATIONS
     viewRejectedBtn.addEventListener('click', ()=>{
         alert('Clicked View REJECTED')
@@ -185,7 +187,7 @@ window.addEventListener('load', ()=> {
         })
         .then(data => {
             resultContainer.innerHTML = data
-            dropDowns = document.querySelectorAll('.dropdown')
+            let dropDowns = document.querySelectorAll('table .dropdown')
 
             dropDowns.forEach(dropDown => {
                 dropDown.addEventListener('click', ()=>{
@@ -211,9 +213,10 @@ window.addEventListener('load', ()=> {
         .then(data => {
             console.log(data)
             resultContainer.innerHTML = data
-            dropDowns = document.querySelectorAll('.dropdown')
+            let dropDowns = document.querySelectorAll('table .dropdown')
 
             dropDowns.forEach(dropDown => {
+                console.log(dropDown)
                 dropDown.addEventListener('click', ()=>{
                     dropDown.classList.toggle('active');
                 })
@@ -236,10 +239,11 @@ window.addEventListener('load', ()=> {
         })
         .then(data => {
             resultContainer.innerHTML = data
-            dropDowns = document.querySelectorAll('.dropdown')
+            let dropDowns = document.querySelectorAll('table .dropdown')
 
             dropDowns.forEach(dropDown => {
                 dropDown.addEventListener('click', ()=>{
+                    console.log(dropDown)
                     dropDown.classList.toggle('active');
                 })
             });
