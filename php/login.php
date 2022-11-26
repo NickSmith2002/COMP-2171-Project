@@ -21,7 +21,7 @@
                     $_SESSION['id'] = $result[0]['ID'];
                     $_SESSION['firstName'] =  $result[0]['First Name'];
                     $_SESSION['lastName'] =  $result[0]['Last Name'];
-                    $_SESSION['position'] = $result[0]['position'];
+                    $_SESSION['position'] = $result[0]['Position'];
                 }
                 else{
                     echo -1;

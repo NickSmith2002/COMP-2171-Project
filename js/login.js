@@ -57,6 +57,8 @@ window.addEventListener('load', ()=>{
                 else{return Promise.reject('Something was wrong with fetch request!')}
             })
             .then(data => {
+                console.log(data)
+
                 if(data == '1'){
                     window.location.replace("../html/processApplication.html");
                 }
