@@ -25,7 +25,7 @@
                     First Name:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "First name" firstName = "" id ="Fname">
+                    <input type = "text" placeholder = "First name" firstName = "" id ="Fname" required>
                 </td>
             </tr>
             <tr>
@@ -33,7 +33,7 @@
                     Middle Initial:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "Initial" initial = "" id = "midtial">
+                    <input type = "text" placeholder = "Initial" initial = "" id = "midtial" required>
                 </td>
             </tr>
             <tr>
@@ -41,7 +41,7 @@
                     Last Name: 
                 </td>
                 <td>
-                    <input type = "text" placeholder = "Last name" lastName ="" id = "Lname">
+                    <input type = "text" placeholder = "Last name" lastName ="" id = "Lname" required> 
                 </td>
             </tr>
             <tr>
@@ -49,7 +49,7 @@
                     ID Number:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "ID" name ="" id = "ID">
+                    <input type = "text" placeholder = "ID" name ="" id = "ID" required>
                 </td>
             </tr>
             <tr>
@@ -57,8 +57,8 @@
                     Gender:
                 </td>
                 <td>
-                    <input type ="radio" name = "Gender" id = "gen" value = "Male">Male
-                    <input type = "radio" name = "Gender" id = "gen2" value = "Female">Female
+                    <input type ="radio" name = "gender" value = "Male">Male
+                    <input type = "radio" name = "gender"  value = "Female">Female
                 </td>
             </tr>
             <tr>
@@ -66,7 +66,7 @@
                     Date of Birth:
                 </td>
                 <td>
-                    <input type = "date" name = "DOB" id = "Dateofbirth">
+                    <input type = "date" name = "DOB" id = "Dateofbirth" required>
                 </td>
             </tr>
             <tr>
@@ -82,11 +82,11 @@
                     Marital Status:
                 </td>
                 <td>
-                    <input type ="radio" name = "marStatus" id = "single">Single
-                    <input type = "radio" name = "marStatus" id = "married">Married
-                    <input type ="radio" name = "marStatus" id = "divorced">Divorced
-                    <input type = "radio" name = "marStatus" id = "widow">Widowed
-                    <input type = "radio" name = "marStatus" id = "common">Common Law
+                    <input type ="radio" name = "marStatus" value = "Single" >Single
+                    <input type = "radio" name = "marStatus" value = "Married">Married
+                    <input type ="radio" name = "marStatus" value = "Divorced">Divorced
+                    <input type = "radio" name = "marStatus" value = "Widowed">Widowed
+                    <input type = "radio" name = "marStatus" value = "Common Law">Common Law
                 </td>
             </tr>
             <tr>
@@ -102,7 +102,7 @@
                     Home Address:
                 </td>
                 <td>
-                    <input type = "text" placeholder = "Address" name = "" id = "home">
+                    <input type = "text" placeholder = "Address" name = "" id = "home" required>
                 </td>
             </tr>
             <tr>
@@ -118,7 +118,7 @@
                     Email Address:
                 </td>
                 <td>
-                    <input type = "email" placeholder = "Email" name = "" id = "email">
+                    <input type = "email" placeholder = "Email" name = "" id = "email" required>
                 </td>
             </tr>
             <tr>
@@ -126,10 +126,10 @@
                     In which family type do you fall?
                 </td>
                 <td>
-                    <input type = "radio" name ="famtype" id = "singparent">Single Parent
-                    <input type = "radio" name ="famtype" id = "nuclear">Nuclear
-                    <input type = "radio" name ="famtype" id = "extended">Extended
-                    <input type = "radio" name ="famtype" id = "sibling">Sibling type
+                    <input type = "radio" name ="famtype" id = "singparent" value = "Single Parent">Single Parent
+                    <input type = "radio" name ="famtype" id = "nuclear" value = "Nuclear">Nuclear
+                    <input type = "radio" name ="famtype" id = "extended" value = "Extended">Extended
+                    <input type = "radio" name ="famtype" id = "sibling" value = "Sibling Type">Sibling type
                 </td>
             </tr>
             <tr>
@@ -216,9 +216,9 @@
                     Please indicate what applies to you:
                 </td>
                 <td>
-                    <input type = "radio" name = "levelofstudy" id = "undergrad">Undergraduate
-                    <input type = "radio" name = "levelofstudy" id = "grad">Postgraduate
-                    <input type = "radio" name = "levelofstudy" id = "lawschool">Norman Manley Law
+                    <input type = "radio" name = "levelofstudy" value = "Undergraduate">Undergraduate
+                    <input type = "radio" name = "levelofstudy" value = "Postgraduate">Postgraduate
+                    <input type = "radio" name = "levelofstudy" value = "Norman Manley Law">Norman Manley Law
                 </td>
             </tr>
             <tr>
@@ -226,11 +226,11 @@
                     Year of study:
                 </td>
                 <td>
-                    <input type = "radio" name = "yearofstudy" id = "first">First
-                    <input type = "radio" name = "yearofstudy" id = "second">Second
-                    <input type = "radio" name = "yearofstudy" id = "third">Third
-                    <input type = "radio" name = "yearofstudy" id = "fourth">Fourth
-                    <input type = "radio" name = "yearofstudy" id = "final">Final
+                    <input type = "radio" name = "yearofstudy" value = "First">First
+                    <input type = "radio" name = "yearofstudy" value = "Second">Second
+                    <input type = "radio" name = "yearofstudy" value = "Third">Third
+                    <input type = "radio" name = "yearofstudy" value= "Fourth">Fourth
+                    <input type = "radio" name = "yearofstudy" value = "Final">Final
 
                 </td>
             </tr>
@@ -248,14 +248,15 @@
                 </td>
                 <td>
                     <select id = "faculty">
-                        <option>Science and Technology</option>
-                        <option>Medical Sciences</option>
-                        <option>Social Sciences</option>
-                        <option>Humanities and Education</option>
-                        <option>Law</option>
-                        <option>Engineering</option>
-                        <option>Sports</option>
-                        <option>Institute of Gender Studies</option>
+                        <option disabled hidden selected>Select</option>
+                        <option value = "Science and Technology">Science and Technology</option>
+                        <option value = "Medical Sciences">Medical Sciences</option>
+                        <option value = "Social Sciences">Social Sciences</option>
+                        <option value = "Humanities and Education">Humanities and Education</option>
+                        <option value = "Law">Law</option>
+                        <option value = "Engineering">Engineering</option>
+                        <option value = "Sports">Sports</option>
+                        <option value = "Institute of Gender Studies">Institute of Gender Studies</option>
                     </select>
                 </td>
             </tr>
@@ -264,8 +265,8 @@
                     Are you the first in your family to attend university?
                 </td>
                 <td>
-                    <input type ="radio" name ="firstgenstudent" id = "firstgenyes">Yes
-                    <input type = "radio" name = "firstgenstudent" id = "firstgenno">No
+                    <input type ="radio" name ="firstgenstudent" value = "Yes">Yes
+                    <input type = "radio" name = "firstgenstudent" value = "No">No
                 </td>
             </tr>
         </table>
@@ -276,8 +277,8 @@
                     Have you ever shared a bathroom or amenities before?
                 </td>
                 <td>
-                    <input type ="radio" name ="accquest1" id = "yesshare">Yes
-                    <input type ="radio" name ="accquest1" id = "noshare">No
+                    <input type ="radio" name ="accquest1" value = "Yes">Yes
+                    <input type ="radio" name ="accquest1" value = "No">No
                 </td>
             </tr>
             <tr>
@@ -286,8 +287,9 @@
                 </td>
                 <td>
                     <select id = "roomtype">
-                        <option>Single</option>
-                        <option>Double</option>
+                        <option disabled hidden selected>Select</option>
+                        <option value = "Single">Single</option>
+                        <option value = "Double">Double</option>
                     </select>
                 </td>
             </tr>
@@ -296,9 +298,9 @@
                     Roomate preference:
                 </td>
                 <td>
-                    <input type = "radio" name = "gendpref" id = "malepref">Male
-                    <input type = "radio" name = "gendpref" id = "femalepref">Female
-                    <input type = "radio" name = "gendpref" id = "anypref">Any
+                    <input type = "radio" name = "gendpref" value = "Male">Male
+                    <input type = "radio" name = "gendpref" value = "Female">Female
+                    <input type = "radio" name = "gendpref" value = "Any">Any
                 </td>
             </tr>
             <tr>
@@ -372,5 +374,9 @@
         <h1>Review Application</h1>
 
     </div>
+    <div class = "submitarea">
+        <button type="submit" class ="btn" id ="submit"> Submit</button>
+    </div>
+
 </body>
 </html>
