@@ -53,6 +53,22 @@ class ResidentModel extends DB {
         return $result;
     }
 
+    protected function getResidentsColumns($columns){
+        $stmt = $this->connect()->prepare("SELECT $columns FROM Residents");
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    protected function getBlockResidents($columns, $block){
+        $stmt = $this->connect()->prepare("SELECT * FROM Residents INNER JOIN Rooms ON Residents.`Room Number` = Rooms.`Room Number` WHERE Rooms.Block = \"$block\"");
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     protected function changeRoom ($newRoomNumber, $residentID) {
         $stmt = $this->connect()->prepare("UPDATE Residents SET Room Number = $newRoomNumber WHERE Resident ID = $residentID;");
         $stmt->execute();
@@ -71,7 +87,7 @@ class ResidentModel extends DB {
                                    $yearOfStudy, $programmeName, $facultyName, $nameOfSchool, 
                                    $roomNumber)
     {
-        $stmt = $this->connect()->prepare("INSERT INTO Applicants (First Name, Last Name, Middle Initial, Resident ID, Position, DOB, Nationality, Gender, Maritial Status, Family Type, Home Address, Mailing Address, Email Address, ID Number, Contact Name, Contact Relationship, Contact Telephone, Contact Address, Contact Email, Level of Study, Year of Study, Programme Name, Faculty Name, Name of School, Room Number) 
+        $stmt = $this->connect()->prepare("INSERT INTO Residents (First Name, Last Name, Middle Initial, Resident ID, Position, DOB, Nationality, Gender, Maritial Status, Family Type, Home Address, Mailing Address, Email Address, ID Number, Contact Name, Contact Relationship, Contact Telephone, Contact Address, Contact Email, Level of Study, Year of Study, Programme Name, Faculty Name, Name of School, Room Number) 
                 VALUES (:firstName, :lastName, :middleInitial, :residentID, :position, :DOB, :nationality, :gender, :maritialStatus, :familyType, :homeAddress, :mailingAddress, :emailAddress, :idNumber, :contactName, :contactRelationship, :contactTelephone, :contactAddress, :contactEmail, :levelOfStudy, :yearOfStudy, :programmeName, :facultyName, :nameOfSchool, :roomNumber)");
         
         $stmt->bindValue(':firstName', $firstName, PDO::PARAM_STR);

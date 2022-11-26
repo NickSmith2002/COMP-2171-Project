@@ -13,7 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
-    
+    <!--SCRIPT TO DOWNLOAD PDF FILES-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
     <link rel="stylesheet" href="../css/reportGeneration.css">
     <link rel="shortcut icon" href="../images/Branding/favicon.ico" type="image/x-icon">
     <script src="../js/reportGeneration.js"></script>
@@ -30,9 +32,46 @@
     </nav>
     
     <section class="mainContent">
+
+        <header>
+            <img src="../images/Branding/logo.png" alt="George Alleyne hall Logo">
+            <h1>Report Generation</h1>
+        </header>
+
+        <div class="title"><h2>Report Type</h2></div>
+        <section class="views">
+            <button class="view-residents">Residents</button>
+            <button class="view-blockL">Block Lynx</button>
+            <button class="view-blockG">Block Genus</button>
+            <button class="view-blockP">Block Pardus</button>
+        </section>
     
+        <div class="title"><h2>Filters</h2></div>
+        <section class="filters">
+            <button class="filter-fName on">First Name</button>
+            <button class="filter-mName on">Middle Initial</button>
+            <button class="filter-lName on">Last Name</button>
+            <button class="filter-position on">Position</button>
+            <button class="filter-nationality on">Nationality</button>
+            <button class="filter-room on">Room Number</button>
+        </section>
+
+        <div id="download"><button>Download PDF</button></div>
+
+        <div id="results">
+            <div class="container">
+                
+            </div>
+        </div>
     </section>
 </section>
 
+<dialogclass="modal">
+    <h2>You are generating a report</h2>
+    <p>Please confirm the details below before fetching for a report from the system</p>
+    <p class="reportType">REPORT TYPE: ALL RESIDENTS</p>
+    <p class="reportColumns">COLUMNS: FIRST NAME</p>
+    <button class="confirm">Confirm</button> <button class="close">Close</button>
+</dialog>
 </body>
 </html>
