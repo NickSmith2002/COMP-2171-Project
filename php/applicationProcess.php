@@ -2,7 +2,7 @@
 
 include 'classAutoloader.php';
 
-$currentTable;
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $appView = new ApplicationView();
@@ -13,32 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 
-
     $appView = new ApplicationView();
     
-    if(isset($_GET['user'])){
-        session_start();
-
-        if(isset($_SESSION['id'])){
-            $resContr = new ResidentController();
-            
-            $result = $resContr->findResidentByID($_SESSION['id'])[0];
-            echo $result['First Name'] . " " . $result['Last Name'];
-        }
-        else{
-            unset($_SESSION['id']);
-            unset($_SESSION['user']);
-            session_destroy();
-            echo "kill";
-        }
-    }
-
-    if(isset($_GET['kill'])){
-        unset($_SESSION['id']);
-        unset($_SESSION['user']);
-        session_destroy();
-        echo "kill";
-    }
 
     if(isset($_GET['view'])){
         if ($_GET['view'] == 'accepted'){
