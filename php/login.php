@@ -1,6 +1,8 @@
 <?php
     include 'classAutoloader.php';
 
+    session_start();
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $inputUsername = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $inputPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
@@ -15,9 +17,11 @@
                 if($inputPassword == $result[0]['Password']){
                     echo 1;
         
-                    session_start();
-                    $_SESSION['username'] = $result[0]['username'];
-                    $_SESSION['id'] = $result[0]['id'];
+                    $_SESSION['username'] = $result[0]['Username'];
+                    $_SESSION['id'] = $result[0]['ID'];
+                    $_SESSION['firstName'] =  $result[0]['First Name'];
+                    $_SESSION['lastName'] =  $result[0]['Last Name'];
+                    $_SESSION['position'] = $result[0]['position'];
                 }
                 else{
                     echo -1;

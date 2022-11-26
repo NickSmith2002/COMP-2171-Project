@@ -45,23 +45,42 @@ window.addEventListener('load', ()=> {
     }
 
     //CHECK IF LOGGED IN
-    fetch(`../php/applicationProcess.php?user=''`)
+    fetch(`../php/checkLogin.php`)
     .then(response => {
         if(response.ok){return response.text()}
         else{return Promise.reject('Something was wrong with fetch request!')}
     })
     .then(data => {
-        if(data == "kill"){
+        //IF session isn't set, redirect to other page
+        if(data == "KILL"){
+
             window.location.replace("../html/loggedOut.html");
         }
+        //If session is set then Add user data to page
         else{
             user.innerHTML = data
         }
     })
     .catch(error => {
-        console.log(`ERROR: ${error}`)
         window.location.replace("../html/ConnectionError.html");
-        alert('Failed to load Applications')
+        alert('LOAD FAILED')
+    })
+
+    //Log out button
+    logout.addEventListener('click', ()=>{
+        fetch('../php/logout.php')
+        .then(response => {
+            if(response.ok){return response.text()}
+            else{return Promise.reject('Something was wrong with fetch request!')}
+        })
+        .then(data => {
+            window.location.replace("../html/loggedOut.html")
+        })
+        .catch(error => {
+            console.log(`ERROR: ${error}`)
+            alert('FETCH FAILED')
+            
+        })
     })
 
     //INITIAL DATABASE TABLE FETCH
@@ -88,24 +107,6 @@ window.addEventListener('load', ()=> {
         alert('Failed to load Applications')
     })
     
-
-    logout.addEventListener('click', ()=>{
-        fetch('../php/applicationProcess.php?kill=')
-        .then(response => {
-            if(response.ok){return response.text()}
-            else{return Promise.reject('Something was wrong with fetch request!')}
-        })
-        .then(data => {
-            console.log(data)
-            window.location.replace("../html/loggedOut.html")
-
-        })
-        .catch(error => {
-            console.log(`ERROR: ${error}`)
-            alert('Failed')
-            
-        })
-    })
     
     //SORT APPLICATIONS IN ASCENDING
     sortAscend.addEventListener('click', ()=>{
