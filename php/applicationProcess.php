@@ -15,6 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     $appView = new ApplicationView();
     
+    if(isset($_GET['position']) and $_GET['position'] == 'check'){
+        echo $_SESSION['position'];
+    }
 
     if(isset($_GET['view'])){
         if ($_GET['view'] == 'accepted'){

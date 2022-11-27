@@ -20,9 +20,17 @@ window.addEventListener('load', () => {
     const results = document.querySelector('#results')
     const resultContainer = document.querySelector("#results .container")
 
+    const modal = document.querySelector('dialog')
+    const closeModalBtn = document.querySelector('dialog .close')
+    const confirmModalBtn = document.querySelector('dialog .confirm')
+    const modalTypeText = document.querySelector('.reportType')
+    const modalColumnsText = document.querySelector('.reportColumns')
+
+    let viewType
+
+    let spinner = '<div class="loader"></div>'
 
     //CHECK IF LOGGED IN
-    /*
     fetch(`../php/checkLogin.php`)
     .then(response => {
         if(response.ok){return response.text()}
@@ -43,7 +51,28 @@ window.addEventListener('load', () => {
         window.location.replace("../html/ConnectionError.html");
         alert('LOAD FAILED')
     })
-    */
+    
+    //Verifying Authentification
+    fetch(`../php/reportGeneration.php?position=check`)
+    .then(response => {
+        if(response.ok){return response.text()}
+        else{return Promise.reject('Something was wrong with fetch request!')}
+    })
+    .then(data => {
+        //IF Not authorized user
+        console.log(data)
+        if(data == "Resident Advisor" || data == "Block Representative"){
+            console.log(`User Type is: ${data}. Access Authorized`)
+        }
+        else{
+            window.location.replace("../html/notAuthorized.html");
+        }
+
+    })
+    .catch(error => {
+        window.location.replace("../html/ConnectionError.html");
+        alert('LOAD FAILED')
+    })
 
     //Log out button
     logout.addEventListener('click', ()=>{
@@ -64,6 +93,7 @@ window.addEventListener('load', () => {
 
     //Change filter Button Colors when clicked
     let allFilterButtons = document.querySelectorAll(".filters button")
+    
     allFilterButtons.forEach(btn => {
         btn.addEventListener('click', ()=>{
             btn.classList.toggle("on")
@@ -111,68 +141,87 @@ window.addEventListener('load', () => {
         return parameters
     }
 
-    //VIEW RESIDENTS REPORT
-    viewResidentsBtn.addEventListener('click', ()=>{
-        fetch(`../php/reportGeneration.php?view=Resident&${getFilterParamters()}`)
+    function getSelectedColumns(){
+        let columns = "Resident ID"
+
+        if(filterFName.classList.contains("on")){columns += ', First Name'}
+
+        if(filterMName.classList.contains("on")){columns += ', Middle Initial'}
+
+        if(filterlName.classList.contains("on")){columns += ', Last Name'}
+
+        if(filterPosition.classList.contains("on")){columns += ', Position'}
+
+        if(filterNationality.classList.contains("on")){columns += ', Nationality'}
+
+        if(filterRoom.classList.contains("on")){columns += ', Room Number'}
+        
+        return columns
+    }
+
+    function fetchTable(){
+        resultContainer.innerHTML = `<div>${spinner}</div>`
+        
+        fetch(`../php/reportGeneration.php?view=${viewType}&${getFilterParamters()}`)
         .then(response => {
             if(response.ok){return response.text()}
             else{return Promise.reject('Something was wrong with fetch request!')}
         })
         .then(data => {
-            resultContainer.innerHTML = "<h1>Report of all Residents</h1>"
+            resultContainer.innerHTML = `<h1>Report of ${viewType}</h1>`
             resultContainer.innerHTML += data
             console.log(data)
         })
         .catch(error => {
             console.log(`ERROR: ${error}`)
         })
+    }
+
+    //CLOSE MODAL
+    closeModalBtn.addEventListener('click', () => {
+        modal.close()
+    })
+
+    //Confirm generating the report
+    confirmModalBtn.addEventListener('click', () => {
+        fetchTable()
+        modal.close()
+        
+    })
+
+
+    //VIEW RESIDENTS REPORT
+    viewResidentsBtn.addEventListener('click', ()=>{
+        viewType = 'Resident'
+        modalTypeText.innerHTML = "<h4>REPORT TYPE:</h4> ALL RESIDENTS"
+        modalColumnsText.innerHTML = "<h4>COLUMNS:</h4> " + getSelectedColumns()
+        modal.showModal()
+
     })
 
     //VIEW BLOCK G REPORTW
     viewBlockGenusBtn.addEventListener('click', ()=>{
-        fetch(`../php/reportGeneration.php?view=Genus&${getFilterParamters()}`)
-        .then(response => {
-            if(response.ok){return response.text()}
-            else{return Promise.reject('Something was wrong with fetch request!')}
-        })
-        .then(data => {
-            resultContainer.innerHTML = "<h1>Report of Genus Block</h1>"
-            resultContainer.innerHTML += data
-        })
-        .catch(error => {
-            console.log(`ERROR: ${error}`)
-        })
+        viewType = 'Genus'
+        modalTypeText.innerHTML = "<h4>REPORT TYPE:</h4> GENUS BLOCK"
+        modalColumnsText.innerHTML = "<h4>COLUMNS:</h4> " + getSelectedColumns()
+        modal.showModal()
     })
 
     //VIEW BLOCK L REPORT
     viewBlockLynxBtn.addEventListener('click', ()=>{
-        fetch(`../php/reportGeneration.php?view=Lynx&${getFilterParamters()}`)
-        .then(response => {
-            if(response.ok){return response.text()}
-            else{return Promise.reject('Something was wrong with fetch request!')}
-        })
-        .then(data => {
-            resultContainer.innerHTML = "<h1>Report of Lynx Block</h1>"
-            resultContainer.innerHTML += data
-        })
-        .catch(error => {
-            console.log(`ERROR: ${error}`)
-        })
+        viewType = 'Lynx'
+        modalTypeText.innerHTML = "<h4>REPORT TYPE:</h4> LYNX BLOCK"
+        modalColumnsText.innerHTML = "<h4>COLUMNS:</h4> " + getSelectedColumns()
+        modal.showModal()
     })
 
     //VIEW BLOCK P REPORT
     viewBlockPardusBtn.addEventListener('click', ()=>{
-        fetch(`../php/reportGeneration.php?view=Pardus&${getFilterParamters()}`)
-        .then(response => {
-            if(response.ok){return response.text()}
-            else{return Promise.reject('Something was wrong with fetch request!')}
-        })
-        .then(data => {
-            resultContainer.innerHTML = "<h1>Report of Pardus Block</h1>"
-            resultContainer.innerHTML += data
-        })
-        .catch(error => {
-            console.log(`ERROR: ${error}`)
-        })
+        viewType = 'Pardus'
+        modalTypeText.innerHTML = "<h4>REPORT TYPE:</h4> PARDUS BLOCK"
+        modalColumnsText.innerHTML = "<h4>COLUMNS:</h4> " + getSelectedColumns()
+        modal.showModal()
     })
+
+    
 })
