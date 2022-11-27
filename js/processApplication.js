@@ -12,6 +12,10 @@ window.addEventListener('load', ()=> {
     const searchBar = document.querySelector('#searchBar')
     const user = document.querySelector('#user')
     const logout = document.querySelector("#logout")
+
+    let spinner = '<div class="loader"></div>'
+
+    resultContainer.innerHTML = `<div>${spinner}</div>`
     
     //SORT FUNCTIONS
     sortShow = (text) => {
@@ -83,6 +87,28 @@ window.addEventListener('load', ()=> {
         })
     })
 
+    //Verifying Authentification
+    fetch(`../php/applicationProcess.php?position=check`)
+    .then(response => {
+        if(response.ok){return response.text()}
+        else{return Promise.reject('Something was wrong with fetch request!')}
+    })
+    .then(data => {
+        //IF Not authorized user
+        console.log(data)
+        if(data == "Resident Advisor" || data == "Block Representative"){
+            console.log(`User Type is: ${data}. Access Authorized`)
+        }
+        else{
+            window.location.replace("../html/notAuthorized.html");
+        }
+
+    })
+    .catch(error => {
+        window.location.replace("../html/ConnectionError.html");
+        alert('LOAD FAILED')
+    })
+
     //INITIAL DATABASE TABLE FETCH
     fetch('../php/applicationProcess.php', {
         method: 'POST',
@@ -110,6 +136,8 @@ window.addEventListener('load', ()=> {
     
     //SORT APPLICATIONS IN ASCENDING
     sortAscend.addEventListener('click', ()=>{
+        resultContainer.innerHTML = `<div>${spinner}</div>`
+
         alert(`Sorting ${sortOption.value} by Ascending`)
 
         fetch(`../php/applicationProcess.php?sort=${sortOption.value}&order=Ascending`)
@@ -128,6 +156,8 @@ window.addEventListener('load', ()=> {
     })
     
     sortDescend.addEventListener('click', ()=>{
+        resultContainer.innerHTML = `<div>${spinner}</div>`
+
         alert(`Sorting ${sortOption.value} by Ascending`)
 
         fetch(`../php/applicationProcess.php?sort=${sortOption.value}&order=Descending`)
@@ -153,6 +183,8 @@ window.addEventListener('load', ()=> {
     //DISPLAYING DIFFERENT TABLE TYPES
     //DISPLAY THE TABLE OF ACCEPTED APPLICATIONS
     viewAcceptedBtn.addEventListener('click', ()=>{
+        resultContainer.innerHTML = `<div>${spinner}</div>`
+
         alert('Clicked View Accepted')
         fetch('../php/applicationProcess.php?view=accepted')
         .then(response => {
@@ -180,6 +212,8 @@ window.addEventListener('load', ()=> {
 
     //DISPLAY THE TABLE OF REJECTED APPLICATIONS
     viewRejectedBtn.addEventListener('click', ()=>{
+        resultContainer.innerHTML = `<div>${spinner}</div>`
+
         alert('Clicked View REJECTED')
         fetch('../php/applicationProcess.php?view=rejected')
         .then(response => {
@@ -205,6 +239,8 @@ window.addEventListener('load', ()=> {
 
     //DISPLAY THE TABLE OF PENDING APPLICATIONS
     viewPendingBtn.addEventListener('click', ()=>{
+        resultContainer.innerHTML = `<div>${spinner}</div>`
+
         alert('Clicked View PENDING')
         fetch('../php/applicationProcess.php?view=pending')
         .then(response => {
@@ -232,6 +268,8 @@ window.addEventListener('load', ()=> {
 
     //DISPLAY THE TABLE OF ALL APPLICATIONS
     viewAllBtn.addEventListener('click', ()=>{
+        resultContainer.innerHTML = `<div>${spinner}</div>`
+
         alert('Clicked View ALL')
         fetch('../php/applicationProcess.php?view=all')
         .then(response => {
@@ -260,6 +298,8 @@ window.addEventListener('load', ()=> {
     //SEARCH FOR SPECIFIC APPLICATION
     searchBar.addEventListener('keypress', (e)=>{
         if(e.key === "Enter"){
+            resultContainer.innerHTML = `<div>${spinner}</div>`
+            
             alert("Pressed Enter Key to Search")
             searchData = searchBar.value
 

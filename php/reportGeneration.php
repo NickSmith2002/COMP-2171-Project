@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include 'classAutoloader.php';
 
 
@@ -7,8 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     $resView = new ResidentView();
 
+    if(isset($_GET['position']) and $_GET['position'] == 'check'){
+        echo $_SESSION['position'];
+    }
+
     //-------------------ALL RESIDENTS-----------------------
-    if($_GET['view'] == 'Resident'){
+    if(isset($_GET['view']) && $_GET['view'] == 'Resident'){
        
         $tags = array("Resident ID"); 
         $columns = "`Resident ID` ";
@@ -42,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     }
 
     //-------------------GENUS-----------------------
-    if($_GET['view']=='Lynx' or $_GET['view'] == 'Genus' or $_GET['view'] == 'Pardus'){
+    if(isset($_GET['view']) && ($_GET['view']=='Lynx' or $_GET['view'] == 'Genus' or $_GET['view'] == 'Pardus')){
     
         $block = $_GET['view'];
         $tags = array("Resident ID"); 
