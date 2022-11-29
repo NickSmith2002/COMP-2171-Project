@@ -308,3 +308,20 @@ tbody tr:nth-of-type(even){
 tbody tr:last-of-type{
     border-bottom: 2px solid darkblue;
 }
+
+
+.loader {
+    border: 4px solid #d1d1d1; /* Light grey */
+    border-top: 4px solid rgba(49,64,147,1); /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

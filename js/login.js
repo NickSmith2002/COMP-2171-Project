@@ -52,6 +52,10 @@ window.addEventListener('load', ()=>{
 
             fetch('../php/login.php', {
                 method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Access-Control-Allow-Origin':'*'
+                },
                 body: formData
             })
             .then(response => {
