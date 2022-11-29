@@ -1,0 +1,302 @@
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    height: 100%;
+    background-color: rgb(241, 241, 241);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mainContent{
+    background-color: white;
+    box-shadow: 0 0 5px rgb(184, 184, 184);
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+h1, h2, h3, h4, h5, p{
+    margin: 0;
+}
+
+a, button{
+    cursor: pointer;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: white;
+    margin-bottom: 30px;
+    box-shadow: 2px 0 5px rgb(184, 184, 184);
+}
+nav a{
+    margin-right: 20px;
+    text-decoration: none;
+    color: darkblue;
+    font-weight: 600;
+    border: 0;
+    transition: 0.2s;
+}
+nav a:hover{
+    color: rgb(46, 46, 46);
+    border-bottom: 2px solid rgb(46, 46, 46);
+}
+nav button{
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+nav button:hover{
+    background-color: rgb(46, 46, 46);
+}
+/******HEADER******/
+header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+header img{
+    width: 150px;
+}
+header h1{
+    font-size: 30px;
+}
+
+/************COMPONENTS***************/
+
+/******View Buttons******/
+.views{
+    /*text-align: center;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.views button{
+    margin: 0 5px;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: darkblue;
+    border: 0;
+    box-shadow: 0 0 15px rgb(175, 175, 175);
+    transition: 0.2s;
+}
+.views button:hover{
+    background-color: rgb(46, 46, 46);
+}
+/*******TABLE*******/
+
+table{
+    width: 100%;
+    margin-bottom: 100px;
+}
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.sort input{
+    background-color: rgb(245, 245, 245);
+    border: 2px solid rgb(221, 221, 221);
+}
+
+.sort .dropdown::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    right: 20px;
+    top: 13px;
+    z-index: 9999;
+    border-top: 2px solid rgb(0, 0, 0);
+    border-right: 2px solid rgb(0, 0, 0);
+    border-left: 0;
+    border-bottom: 0;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;   
+}
+.sort-btn{
+    background-color: rgb(245, 245, 245);
+    border: 2px solid rgb(221, 221, 221);
+    border-radius: 5px;
+    margin-left: 5px;
+
+    transition: 0.2s;
+}
+.sort-btn:hover{
+    background-color: rgb(46, 46, 46);
+    border: 2px solid rgb(46, 46, 46);
+    color: white;
+}
+
+.sort .items{
+    display: flex;
+}
+
+#searchBar{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(245, 245, 245);
+    border: 2px solid rgb(221, 221, 221);
+    padding: 20px;
+}
+#searchBar:focus{
+    outline-width: none;
+}
+/*********DROP DOWN*********/
+.dropdown{
+    position: relative;
+    width: 150px;
+    height: 40px;
+}
+table .dropdown::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    right: 20px;
+    top: 13px;
+    z-index: 9999;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 0;
+    border-bottom: 0;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;   
+}
+
+.dropdown.active::before{
+    transform: rotate(-225deg);
+    top: 17px;
+}
+
+.dropdown input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid rgb(194, 194, 194);
+}
+table .dropdown input{
+    color: white;
+}
+
+.dropdown .option{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: white;
+    border: 2px solid black;
+    overflow: hidden;
+    display: none;
+    z-index: 10000;
+    color: black;
+}
+.dropdown.active .option{
+    display: block;
+}
+
+.dropdown .option div{
+    padding: 12px 20px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+.dropdown .option div:hover{
+    background-color: rgb(200, 200, 255);
+}
+
+.Accepted{
+    background-color: rgb(1, 143, 8);
+}
+.Pending{
+    background-color: rgb(110, 110, 110);
+}
+.Rejected{
+    background-color: rgb(161, 37, 37);
+}
+
+table button{
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(71, 71, 71);
+    border: 0;
+    box-shadow: 0 0 15px rgb(175, 175, 175);
+    width: 40px;
+    height: 40px;
+
+    transition: 0.2s;
+}
+table button:hover{
+    background-color: darkblue;
+}
+
+
+table{
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 1em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    font-size: 16px;
+}
+thead tr{
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+}
+th,td{
+    padding: 12px 15px;
+}
+
+tbody tr{
+    border-bottom: 1px solid #dddddd;
+
+    transition: 0.2s;
+}
+tbody tr:hover{
+    font-weight: bold;
+    color: darkblue;
+}
+
+tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+tbody tr:last-of-type{
+    border-bottom: 2px solid darkblue;
+}

@@ -61,6 +61,38 @@ class ResidentModel extends DB {
         return $result;
     }
 
+    protected function getResidentTable_present(){
+        $stmt = $this->connect()->prepare("SELECT `Resident ID`,Position,`First Name`, `Last Name`, `Middle Initial`,Gender, `Phone Number`, `Email Address`, `Room Number` FROM Residents");
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    protected function getResidentAdvisorTable_present(){
+        $stmt = $this->connect()->prepare("SELECT `Resident ID`,Position,`First Name`, `Last Name`, `Middle Initial`,Gender, `Phone Number`, `Email Address`, `Room Number` FROM Residents WHERE Position = \"Resident Advisor\"");
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    
+    protected function getBlockRepTable_present(){
+        $stmt = $this->connect()->prepare("SELECT `Resident ID`,Position,`First Name`, `Last Name`, `Middle Initial`,Gender, `Phone Number`, `Email Address`, `Room Number` FROM Residents WHERE Position = \"Block Representative\"");
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    protected function getStandardResidentTable_present(){
+        $stmt = $this->connect()->prepare("SELECT `Resident ID`,Position,`First Name`, `Last Name`, `Middle Initial`,Gender, `Phone Number`, `Email Address`, `Room Number` FROM Residents WHERE Position = \"Resident\"");
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    
     protected function getBlockResidents($columns, $block){
         $stmt = $this->connect()->prepare("SELECT * FROM Residents INNER JOIN Rooms ON Residents.`Room Number` = Rooms.`Room Number` WHERE Rooms.Block = \"$block\"");
         $stmt->execute();
