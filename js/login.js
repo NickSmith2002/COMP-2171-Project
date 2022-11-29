@@ -4,8 +4,7 @@ window.addEventListener('load', ()=>{
     const username_msg = document.querySelector('.username-msg')
     const password_msg = document.querySelector('.password-msg')
 
-    const cors = require("cors")
-    app.use(cors())
+  
 
     const loginBtn = document.querySelector('button')
     let spinner = '<div class="loader"></div>'
