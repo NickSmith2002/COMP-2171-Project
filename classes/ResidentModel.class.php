@@ -102,12 +102,19 @@ class ResidentModel extends DB {
     }
 
     protected function changeRoom ($newRoomNumber, $residentID) {
-        $stmt = $this->connect()->prepare("UPDATE Residents SET Room Number = $newRoomNumber WHERE Resident ID = $residentID;");
+        $stmt = $this->connect()->prepare("UPDATE Residents SET Room Number = $newRoomNumber WHERE `Resident ID` = $residentID;");
         $stmt->execute();
     }
 
     protected function deleteResident($id) {
-        $stmt = $this->connect()->prepare("DELETE FROM Residents WHERE ResidentID = $id;");
+        $stmt = $this->connect()->prepare("DELETE FROM Residents WHERE `Resident ID` = $id; DELETE FROM Users WHERE ID = $id;");
+        
+        $stmt->execute();
+
+    }
+
+    protected function updateResident($id, $data){
+        $stmt = $this->connect()->prepare("UPDATE Residents SET $data WHERE `Resident ID` = $id");
         $stmt->execute();
     }
 

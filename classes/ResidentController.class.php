@@ -26,6 +26,17 @@ class ResidentController extends ResidentModel {
         return $this->deleteResident($id);
     }
 
+    public function changeResident($id,$data){
+        if(!empty($this->findResidentbyID($id))){
+            echo "Resident successfully updated";
+            return $this->updateResident($id,$data);
+        }
+        else{
+            echo "Update failed.No resident found/invalid ID type";
+        }
+    }
+       
+
     public function addNewResident($firstName, $lastName, $middleInitial, $residentID, $position, $DOB, $nationality, 
                                    $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
                                    $emailAddress, $idNumber, $contactName, $contactRelationship, 
