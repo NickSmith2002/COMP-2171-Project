@@ -32,6 +32,7 @@ if(!isset($_SESSION['id'])){
          <a href="../html/residentUpdate.html">Residents</a>
          <a href="../php/event.php">Notice Board</a>
          <a href="../php/records.php">Edit Notices</a>
+         <a href="../html/reportGeneration.html">Report Generation</a>
       </div>
    </div>
 

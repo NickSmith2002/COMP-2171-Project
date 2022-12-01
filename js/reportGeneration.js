@@ -61,7 +61,7 @@ window.addEventListener('load', () => {
     .then(data => {
         //IF Not authorized user
         console.log(data)
-        if(data == "Resident Advisor" || data == "Block Representative"){
+        if(data == "Resident Advisor"){
             console.log(`User Type is: ${data}. Access Authorized`)
         }
         else{
