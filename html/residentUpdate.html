@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Residents - George Alleyne Hall</title>
+    
+    <!--FONTS AND EXTERNAL STYLES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="../css/residentUpdate.css">
+    <link rel="shortcut icon" href="../images/Branding/favicon.ico" type="image/x-icon">
+    <script src="../js/residentUpdate.js"></script>
+
+</head>
+<body>
+<section class="bg">
+
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#" id="user">Name</a>
+        <button id="logout"><i class="material-icons">exit_to_app</i></button>
+    </nav>  
+
+<section class = "mainContent">
+    <header class="container">
+        <img src="../images/Branding/logo.png" alt="George Alleyne hall Logo">
+        <h1>Resident Processing</h1>
+    </header>
+
+    <section class="container views">
+        <button class="update-resident">Update Resident</button>
+        <button class="delete-resident">Delete Resident</button>
+        <button class="view-residentadvisors">View Resident Advisors</button>
+        <button class="view-blockreps">View Block Representatives</button>
+        <button class="view-standardresidents">View Standard Residents</button>
+        <button class="view-all">View All</button>
+        
+    
+    </section>
+
+    <main class="container">
+    <div class="controls">
+            <div class="sort">
+                <div>
+                    <h4>Sort by</h4>
+                </div>
+                <div class="items">
+                    <div class="dropdown">
+                        <input type="text" class="textBox" value="ID Number" readonly>
+                        <div class="option">
+                            <div onclick="sortShow('ID Number')">ID Number</div>
+                            <div onclick="sortShow('Name')">Name</div>
+                        </div>
+                    </div>
+
+                    <button class="sort-btn ascend"><i class="material-icons">arrow_downward</i></button>
+                    <button class="sort-btn descend"><i class="material-icons">arrow_upward</i></button>
+                </div>
+                
+            </div>
+            <div>
+                <input type="text" name="searchbar" id="searchBar" placeholder="Enter Name or ID">
+            </div>
+        </div>
+        <div id="result">
+
+        </div>
+    </main>
+
+</section>
+    
+
+</section>
+<dialog class="modal update">
+    <h2>You are updating a resident</h2>
+    <p>Please enter the resident's ID to update their information</p>
+    <form>
+        <input type="text" placeholder = "ID Number" id = "IDnumupdate">
+        <br>
+        <input type="text" placeholder = "First Name" id = "Fnameupdate">
+        <br>
+        <input type="text" placeholder = "Last Name" id = "Lnameupdate">
+        <br>
+        <input type="text" placeholder = "Middle Initial" id = "Midinitialupdate">
+        <br>
+        <select id = "positionupdate">
+            <option disabled hidden selected>Select</option>
+            <option value = "Resident Advisor">Resident Advisor</option>
+            <option value = "Block Representative">Block Representative</option>
+            <option value = "Standard Resident">Resident</option>
+        </select>
+        <br>
+        <input type="text" placeholder = "Phone Number" id = "Phoneupdate">
+        <br>
+        <input type="text" placeholder = "Email Address" id = "Emailupdate">
+        <br>
+        <button class="confirm1">Confirm</button> <button class="close1">Close</button>
+    </form>
+</dialog>
+<dialog class = "modal delete">
+    <h2>You are deleting a resident</h2>
+    <p>Please enter the resident's ID to remove their record</p>
+    <form>
+        <input type="text" placeholder = "ID Number" id = "IDnumdelete">
+        <br>
+        <button class="confirm2">Confirm</button> <button class="close2">Close</button>
+    </form>
+</dialog>
+</body>
+</html>  
