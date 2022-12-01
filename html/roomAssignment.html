@@ -1,16 +1,17 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel = "stylesheet" href = "roomassign.css">
+        <link rel = "stylesheet" href = "../css//roomassign.css">
+        <script src="../js/roomassign.js"></script>
         <title>George Alleyne Hall Room Assignment</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
 
-    <link rel="shortcut icon" href="../images/Branding/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../images/Branding/favicon.ico" type="image/x-icon">
    
     
     </head>
@@ -32,27 +33,32 @@
         
         
             <main class="container">
-                <b><p> Room type:    </p></b>
-                <p> Single <input name="btn" type="radio" id = "single" /> 
-                    Double <input name="btn" type="radio" id ="double" /></p>
-                <p>
-                    <br>
-        
-                </p>
-                <b><p>Room number: 	</p></b>
+                <b><h3>Room number: 	</h3></b>
         
                 <input type="text" placeholder="Enter the room number" id = "roomnum" />
                 <br>
+                <br>
         
-                <b><p>Resident ID 	</p></b>
-                <input type="text" placeholder="Enter the resident's ID " id = "residentid"/>  
+                <p>Enter resident ID in Resident ID#1 for single occupancy or ID's in both one and two for double occupancy</p>
+                <p>Enter none in the Resident ID fields to set the room to no residents</p>
+                <b><h3>Resident ID #1: 	</h3></b>
+                <input type="text" placeholder="Enter the resident's ID " id = "residentid1"/>  
+                
+                <br>
+                <br>
+
+                <b><h3>Resident ID #2: 	</h3></b>
+                <input type="text" placeholder="Enter the resident's ID " id = "residentid2"/>
                 
                 <br>
                 <section class="container views">
                     <button class="submit">Submit</button>
                 </section>
             </main>
-        
+            
+            <div id="result">
+
+            </div>
         </section>
             
         

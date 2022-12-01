@@ -1,8 +1,12 @@
 window.onload = function(){
     const submitbutton = document.querySelector(".submit")
     const roomnumber = document.getElementById("#roomnum")
-    const residentid = document.getElementById("#residentid1")
+    const residentid1 = document.getElementById("#residentid1")
     const residentid2 = document.getElementById("#residentid2")
+    const submitBtn = document.querySelector(".submit")
+    const resultContainer = document.querySelector("#result")
+
+    const logoutBtn = document.querySelector("#logout")
     
 
     //CHECK IF LOGGED IN
@@ -45,26 +49,26 @@ window.onload = function(){
     })
 
     //Verifying Authentification
-    fetch(`../php/roomAssignment.php?position=check`)
-    .then(response => {
-        if(response.ok){return response.text()}
-        else{return Promise.reject('Something was wrong with fetch request!')}
-    })
-    .then(data => {
-        //IF Not authorized user
-        console.log(data)
-        if(data == "Resident Advisor"){
-            console.log(`User Type is: ${data}. Access Authorized`)
-        }
-        else{
-            window.location.replace("../html/notAuthorized.html");
-        }
+    // fetch(`../php/roomAssignment.php?position=check`)
+    // .then(response => {
+    //     if(response.ok){return response.text()}
+    //     else{return Promise.reject('Something was wrong with fetch request!')}
+    // })
+    // .then(data => {
+    //     //IF Not authorized user
+    //     console.log(data)
+    //     if(data == "Resident Advisor"){
+    //         console.log(`User Type is: ${data}. Access Authorized`)
+    //     }
+    //     else{
+    //         window.location.replace("../html/notAuthorized.html");
+    //     }
 
-    })
-    .catch(error => {
-        window.location.replace("../html/ConnectionError.html");
-        alert('LOAD FAILED')
-    })
+    // })
+    // .catch(error => {
+    //     window.location.replace("../html/ConnectionError.html");
+    //     alert('LOAD FAILED')
+    // })
 
 
 
@@ -84,6 +88,43 @@ window.onload = function(){
     })
 
 
-    
+    //CLICKING THE SUBMIT BUTTON
+    submitBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        let res1
+        let res2
+
+        if(residentid1.value.trim() == ""){
+            res1 = "-1"
+        }
+        else{
+            res1 = residentid1.value.trim()
+        }
+
+        if(residentid2.value.trim() == ""){
+            res2 = "-1"
+        }
+        else{
+            res2 = residentid2.value.trim()
+        }
+
+        if(roomnumber.ariaValueMax.trim() != ""){
+            fetch(`../php/roomAssignment.php?assignRoom=true&res1=${res1}&res2=${res2}`)
+            .then(response => {
+                if(response.ok){return response.text()}
+                else{return Promise.reject('Something was wrong with fetch request!')}
+            })
+            .then(data => {
+                alert(data)
+            })
+            .catch(error => {
+                console.log(`ERROR HAS OCCURRED`)
+                console.log(`ERROR: ${error}`)
+                alert('Failed to update Room')
+            })
+        }
+
+    })
 }
     

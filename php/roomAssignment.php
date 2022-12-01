@@ -22,15 +22,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         }
         else{
             if($resID1 != -1){
-                $roomContr->assignResident1($room, $resID1);
+                if($roomContr->findRoom($room) != ""){
+                    $roomContr->assignResident1($room, $resID1);
+                    echo "SUCCESSFULLY UPDATED ROOM 1";
+                }
+                else{
+                    echo "ROOM NOT FOUND";
+                }
             }
         }
+
         if($resID2 == "none"){
             $roomContr->assignResident2($room, "\`\`");
+        }
+        else{
             if($resID2 != -1){
-                $roomContr->assignResident2($room, $resID2);
+                if($roomContr->findRoom($room) != ""){
+                    $roomContr->assignResident2($room, $resID2);
+                    echo "SUCCESSFULLY UPDATED ROOM 2";
+                }
+                else{
+                    echo "ROOM NOT FOUND";
+                }
             }
         }
+
+        
         
     }
 

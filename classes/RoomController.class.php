@@ -10,4 +10,7 @@ class RoomController extends RoomModel{
         $this->changeResident2($roomNumber, $newResident);
     }
 
+    public function findRoom($roomNumber){
+        return $this->getRoom($roomNumber)[0];
+    }
 }
