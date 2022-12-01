@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Alleyne Application Form</title>
+
+    <link rel="stylesheet" href="application.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="application.js"></script>
+
+</head>
+<body>
+    <form>
+    <header>
+        <h1>George Alleyne Hall's Application Form</h1>
+        <p>Hi!</p>
+        <p>Thank you for considering the George Alleyne Hall, The University of the West Indies Mona</p>
+        <p>Please complete the form below. After submission ensure to check your emails frequently as offers will be sent out shortly after</p>
+    </header>
+        <h3>Personal Information</h3>
+        <table id="Personalinfo">
+            <tr>
+                <td>
+                    First Name:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "First name" firstName = "" id ="Fname" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Middle Initial:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "Initial" initial = "" id = "midtial" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last Name: 
+                </td>
+                <td>
+                    <input type = "text" placeholder = "Last name" lastName ="" id = "Lname" required> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ID Number:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "ID" name ="" id = "ID" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender:
+                </td>
+                <td>
+                    <input type ="radio" name = "gender" value = "Male">Male
+                    <input type = "radio" name = "gender"  value = "Female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date of Birth:
+                </td>
+                <td>
+                    <input type = "date" name = "DOB" id = "Dateofbirth" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nationality:
+                </td>
+                <td>
+                    <input type ="text" placeholder = "Nationality" name = "" id = "nation">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Marital Status:
+                </td>
+                <td>
+                    <input type ="radio" name = "marStatus" value = "Single" >Single
+                    <input type = "radio" name = "marStatus" value = "Married">Married
+                    <input type ="radio" name = "marStatus" value = "Divorced">Divorced
+                    <input type = "radio" name = "marStatus" value = "Widowed">Widowed
+                    <input type = "radio" name = "marStatus" value = "Common Law">Common Law
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Telephone number:
+                </td>
+                <td>
+                    <input type ="Phone" placeholder = "Telephone number" name = "" id = "telnum">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Home Address:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "Address" name = "" id = "home" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mailing Address:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "If different from home" name ="" id = "mail">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email Address:
+                </td>
+                <td>
+                    <input type = "email" placeholder = "Email" name = "" id = "email" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    In which family type do you fall?
+                </td>
+                <td>
+                    <input type = "radio" name ="famtype" id = "singparent" value = "Single Parent">Single Parent
+                    <input type = "radio" name ="famtype" id = "nuclear" value = "Nuclear">Nuclear
+                    <input type = "radio" name ="famtype" id = "extended" value = "Extended">Extended
+                    <input type = "radio" name ="famtype" id = "sibling" value = "Sibling Type">Sibling type
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Do you have children?
+                </td>
+                <td>
+                    <input type = "radio" name ="numchildren" id = "childrenyes">Yes
+                    <input type = "radio" name ="numchildren" id = "childrenno">No
+                </td>
+            </tr>
+            </table>
+        <h3>Emergency Contacts</h3>
+        <table id = "Emergency contact info">
+            <tr>
+                <td>
+                    Emergency Contact 1:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "First and last name" name ="" id = "contname1">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "text" placeholder = "Relationship" name ="" id = "relationship">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "text" placeholder = "Home address" name ="" id = "contaddress">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "email" placeholder = "Email address" name ="" id = "contemail">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type ="Phone" placeholder = "Telephone number" name = "" id = "contnumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Emergency Contact 2:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "First and last name" name ="" id = "contname2">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "text" placeholder = "Relationship" name ="" id = "relationship2">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "text" placeholder = "Home address" name ="" id = conthome2>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "email" placeholder = "Email address" name ="" id = "contemail2">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type ="Phone" placeholder = "Telephone number" name = "" id = "contnumber2">
+                </td>
+            </tr>
+        </table>
+        <h3>School Information</h3>
+        <table id ="School">
+            <tr>
+                <td>
+                    Please indicate what applies to you:
+                </td>
+                <td>
+                    <input type = "radio" name = "levelofstudy" value = "Undergraduate">Undergraduate
+                    <input type = "radio" name = "levelofstudy" value = "Postgraduate">Postgraduate
+                    <input type = "radio" name = "levelofstudy" value = "Norman Manley Law">Norman Manley Law
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Year of study:
+                </td>
+                <td>
+                    <input type = "radio" name = "yearofstudy" value = "First">First
+                    <input type = "radio" name = "yearofstudy" value = "Second">Second
+                    <input type = "radio" name = "yearofstudy" value = "Third">Third
+                    <input type = "radio" name = "yearofstudy" value= "Fourth">Fourth
+                    <input type = "radio" name = "yearofstudy" value = "Final">Final
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name of Programme:
+                </td>
+                <td>
+                    <input type = "text" placeholder = "Programme" name="" id = "programme">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Faculty:
+                </td>
+                <td>
+                    <select id = "faculty">
+                        <option disabled hidden selected>Select</option>
+                        <option value = "Science and Technology">Science and Technology</option>
+                        <option value = "Medical Sciences">Medical Sciences</option>
+                        <option value = "Social Sciences">Social Sciences</option>
+                        <option value = "Humanities and Education">Humanities and Education</option>
+                        <option value = "Law">Law</option>
+                        <option value = "Engineering">Engineering</option>
+                        <option value = "Sports">Sports</option>
+                        <option value = "Institute of Gender Studies">Institute of Gender Studies</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Are you the first in your family to attend university?
+                </td>
+                <td>
+                    <input type ="radio" name ="firstgenstudent" value = "Yes">Yes
+                    <input type = "radio" name = "firstgenstudent" value = "No">No
+                </td>
+            </tr>
+        </table>
+        <h3>Accommodation Information</h3>
+        <table id = "Accommodation">
+            <tr>
+                <td>
+                    Have you ever shared a bathroom or amenities before?
+                </td>
+                <td>
+                    <input type ="radio" name ="accquest1" value = "Yes">Yes
+                    <input type ="radio" name ="accquest1" value = "No">No
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Occupancy type:
+                </td>
+                <td>
+                    <select id = "roomtype">
+                        <option disabled hidden selected>Select</option>
+                        <option value = "Single">Single</option>
+                        <option value = "Double">Double</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Roomate preference:
+                </td>
+                <td>
+                    <input type = "radio" name = "gendpref" value = "Male">Male
+                    <input type = "radio" name = "gendpref" value = "Female">Female
+                    <input type = "radio" name = "gendpref" value = "Any">Any
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name of preferred roomate (if any):
+                </td>
+                <td>
+                    <input type = "text" placeholder = "First and last name" name ="" id = "matename">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Estimated date of arrival:
+                </td>
+                <td>
+                    <input type ="date" name = "DOA" id = "DOA">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Please select your sports interest/s:
+                </td>
+                <td>
+                    <input type = "checkbox" name ="interest" id = "football">Football
+                    <input type = "checkbox" name ="interest" id = "cricket">Cricket
+                    <input type = "checkbox" name ="interest" id = "badminton">Badminton
+                    <input type = "checkbox" name ="interest" id = "volley">Volley Ball
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "checkbox" name ="interest" id = "netball">Netball
+                    <input type = "checkbox" name ="interest" id = "swimming">Swimming
+                    <input type = "checkbox" name ="interest" id = "tennis">Table Tennis
+                    <input type = "checkbox" name ="interest" id = "track">Track and field
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type = "checkbox" name ="interest" id = "basketball">Basketball
+                    <input type = "checkbox" name ="interest" id = "hockey">Hockey
+                    <input type = "checkbox" name ="interest" id = "lawn">Lawn Tennis
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Select your Performing arts interest/s:
+                </td>
+                <td>
+                    <input type = "checkbox" name ="artinterest" id = "dance">Dance
+                    <input type = "checkbox" name ="artinterest" id = "speech">Speech
+                    <input type = "checkbox" name ="artinterest" id = "choir">Choir
+                    <input type = "checkbox" name ="artinterest" id = "drama">Drama
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Do you play a musical instrument?
+                </td>
+                <td>
+                    <input type ="radio" name = "instrument" id = "playyes">Yes
+                    <input type ="radio" name = "instrument" id = "playno">No
+                </td>
+            </tr>
+        </table>
+        <button type = "review" class="btn" id = "review">Next</button>
+    </form>
+    <div class = "reviewForm hidden">
+        <h1>Review Application</h1>
+
+    </div>
+    <div class = "submitarea">
+        <button type="submit" class ="btn" id ="submit"> Submit</button>
+    </div>
+
+</body>
+</html>
