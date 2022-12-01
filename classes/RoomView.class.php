@@ -18,7 +18,7 @@ class RoomView extends RoomModel {
           
           foreach ($results as $row){
             echo "<tr>";
-            echo "<td>".$row['Room Number']."</td>" . "<td>".$row['Room Type']. " " . $row['Block'] . "</td>" . "<td>".$row['Availability Status']."</td>" . "<td>".$row['Resident ID #1']."</td>" . "<td>".$row['Resident ID #2']."</td>";
+            echo "<td>".$row['Room Number']."</td>" . "<td>".$row['Room Type']."</td>" . "<td>" . $row['Block'] . "</td>" . "<td>".$row['Availability Status']."</td>" . "<td>".$row['Resident ID #1']."</td>" . "<td>".$row['Resident ID #2']."</td>";
             echo "</tr>";
           }
           
