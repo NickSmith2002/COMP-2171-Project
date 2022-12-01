@@ -7,12 +7,14 @@
 
     <link rel="stylesheet" href="application.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="../js/applicationSubmission.js"></script>
+    <script src="../js/application.js"></script>
     <link rel="stylesheet" href="../css/applicationSubmission.css">
+    
 
 </head>
 <body>
-    <form>
+    <form name="Application" method="post" action="../submitApplication.php">
+
     <header>
         <h1>George Alleyne Hall's Application Form</h1>
         <p>Hi!</p>
@@ -370,14 +372,15 @@
             </tr>
         </table>
         <button type = "review" class="btn" id = "review">Next</button>
-    </form>
+   </form>
+
     <div class = "reviewForm hidden">
         <h1>Review Application</h1>
 
     </div>
     <div class = "submitarea">
         <button type="submit" class ="btn" id ="submit"> Submit</button>
-    </div>
-
+              
+    </div> 
 </body>
 </html>
