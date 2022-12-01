@@ -32,7 +32,7 @@ if(!($_SESSION['position'] == 'Resident Advisor' || $_SESSION['position'] == 'Bl
 <body>
 
       <div>
-			 <!-- <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a> -->
+			  <a href="../html/Dashboard.php">Dashboard</a>
         <a href="event.php" target ="_blank"><i class="fas fa-resident-view" ></i>Resident View</a>
 			</div>
 

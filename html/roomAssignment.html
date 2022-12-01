@@ -19,7 +19,7 @@
         <section class="bg">
         
             <nav>
-                <a href="#">Dashboard</a>
+                <a href="../html/Dashboard.php">Dashboard</a>
                 <a href="#" id="user"></a>
                 <button id="logout"><i class="material-icons">exit_to_app</i></button>
             </nav>
@@ -33,11 +33,7 @@
         
         
             <main class="container">
-                <b><h3> Room type:    </p></h3>
-            <p> Single <input name="btn" type="radio" /> 
-			    Double <input name="btn" type="radio" /></p>
-            <br>
-            
+                
                 <b><h3>Room number: 	</h3></b>
         
                 <input type="text" placeholder="Enter the room number" id = "roomnum" />
@@ -56,9 +52,22 @@
                 <input type="text" placeholder="Enter the resident's ID " id = "residentid2"/>
                 
                 <br>
+
+                <b><h3> Room Status:    </p></h3></b>
+
+                    <p> 
+                        <input name="btn" type="radio" class="radio occupied"> Occupied
+                        <input name="btn" type="radio" class="radio available"> Available
+                    </p>
+                
+                    <br>
+
                 <section class="container views">
                     <button class="submit">Submit</button>
                 </section>
+
+
+                <div id="result"></div>
             </main>
         
         </section>

@@ -6,18 +6,16 @@ body {
 }
 header {
     font-size: 18px;
-    margin: 30px;
+    text-align: center;
 
 }
 h1 {
     border: 2px;
     padding: 3px;
-    position: relative; left: 30px;   
-    font-size: 30px;
+    font-size: 50px;
 }
 main{
-    margin: 30px;
-
+    margin: 20px;
 }
 
 img{
@@ -29,22 +27,25 @@ img{
     margin: 10px;
 }
 .grid{
-    text-align: center;
-    position: fixed; top:50%; right:60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
 }
 #Applications{
     text-align: left;
 
 }
 .buttons{
-    display: grid;
-    width: 400px;
-    height:90px;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: 2fr 2fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 5px;
-    
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    font-size: 30px;
+    background-color: white;
+    color:#5A67D8;
+    margin: 10px;
+    text-decoration: none;
 }
 
 footer{

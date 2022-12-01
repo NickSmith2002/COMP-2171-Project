@@ -28,6 +28,7 @@ if(!isset($_SESSION['id'])){
 
 
   <section class="sec2" id="records">
+    <a href="../html/Dashboard.php">GO TO DASHBOARD</a>
     <h2 class="text-center mb-3">Notice Board</h2>
     <div class="row" style="min-width:900px; padding:10px;">
       <div class="col-12 bg-secondary text-light p-1">

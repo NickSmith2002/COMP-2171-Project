@@ -12,22 +12,21 @@ session_start();
 </head> 
 <body>
 <div class="container">
- <header>
- <h1>Welcome</h1>
- <p><?php echo $_SESSION['firstName'] . " " . $_SESSION['lastName'] . " ";?> Dashboard</p>
- </header>
- <main>
+   <header>
+      <h1>Welcome</h1>
+      <p><?php echo $_SESSION['firstName'] . " " . $_SESSION['lastName'] . " ";?> Dashboard</p>
+   </header>
 
-<img src="logo.png" alt="Cat">
-<div class="grid">
-<div class="buttons">
-   <a href="../html/processApplication.html"><button type="submit" class="btn">Applications</a> 
-   <a href="../html/roomAssignment.html"><button type="submit" class="btn">Room Assignmet</button>
-   <a href="../html/residentUpdate.html"><button type="submit" class="btn">Residents</button>
-   <a href="../php/event.php"><button type="submit" class="btn">Notice Board</button>
-   <a href="../php/records.php"><button type="submit" class="btn">Edit Notices</button>
-</div>
-</div>
+   <div class="grid">
+      <img src="../images/Branding/logo.png" alt="Logo">
+      <div class="buttons">
+         <a href="../html/processApplication.html">Applications</a> 
+         <a href="../html/roomAssignment.html">Room Assignmet</a>
+         <a href="../html/residentUpdate.html">Residents</a>
+         <a href="../php/event.php">Notice Board</a>
+         <a href="../php/records.php">Edit Notices</a>
+      </div>
+   </div>
 
 </div>
 </body>
