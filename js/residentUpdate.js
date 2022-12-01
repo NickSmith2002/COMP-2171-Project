@@ -168,7 +168,7 @@ fetch(`../php/checkLogin.php`)
     //IF session isn't set, redirect to other page
     if(data == "KILL"){
 
-        window.location.replace("../html/loggedOut.html");
+        window.location.replace("../html/homepage.html");
     }
     //If session is set then Add user data to page
     else{
@@ -210,7 +210,7 @@ logout.addEventListener('click', ()=>{
         else{return Promise.reject('Something was wrong with fetch request!')}
     })
     .then(data => {
-        window.location.replace("../html/loggedOut.html")
+        window.location.replace("../html/homepage.html")
     })
     .catch(error => {
         console.log(`ERROR: ${error}`)
