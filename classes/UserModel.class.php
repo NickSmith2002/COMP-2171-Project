@@ -36,4 +36,8 @@ class UserModel extends DB {
         $stmt->bindValue(':password', $password, PDO::PARAM_STR);
         $stmt->execute();
     }
+
+    protected function deleteUser(){
+        
+    }
 }
