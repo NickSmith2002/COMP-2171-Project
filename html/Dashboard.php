@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['id'])){
+   header("Location: homepage.html");
+   exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,12 +14,14 @@ session_start();
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Dashboard</title>
  <link rel="stylesheet" href="../css/Dashboard_styles.css">
+ <script src="../js/dashboard.js"></script>
 </head> 
 <body>
 <div class="container">
    <header>
       <h1>Welcome</h1>
       <p><?php echo $_SESSION['firstName'] . " " . $_SESSION['lastName'] . " ";?> Dashboard</p>
+      <button id="logout">LOG OUT</button>
    </header>
 
    <div class="grid">
