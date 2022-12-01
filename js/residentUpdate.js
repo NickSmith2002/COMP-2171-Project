@@ -158,6 +158,7 @@ confirmBtnupdate.addEventListener("click",function(element){
     updateModal.close()
 })
 
+
 //CHECK IF LOGGED IN
 fetch(`../php/checkLogin.php`)
 .then(response => {
@@ -201,6 +202,7 @@ fetch(`../php/residentUpdate.php?position=check`)
     window.location.replace("../html/ConnectionError.html");
     alert('LOAD FAILED')
 })
+
 
 //Log out button
 logout.addEventListener('click', ()=>{
