@@ -1,10 +1,13 @@
 window.addEventListener('load', ()=> {
 
     const resultContainer = document.querySelector('#result')
+
     const viewAcceptedBtn = document.querySelector('.view-accept')
     const viewRejectedBtn = document.querySelector('.view-reject')
     const viewPendingBtn = document.querySelector('.view-pending')
     const viewAllBtn = document.querySelector('.view-all')
+    const convertAccepted = document.querySelector('.convert')
+
     const sortDropDown = document.querySelector(".sort .dropdown")
     const sortAscend = document.querySelector('.ascend')
     const sortDescend = document.querySelector('.descend')
@@ -289,6 +292,21 @@ window.addEventListener('load', ()=> {
         })
         .catch(error => {
             console.log(`ERROR HAS OCCURRED WITH LOADING APPLICATIONS`)
+            console.log(`ERROR: ${error}`)
+            alert('Failed to load Applications')
+        })
+    })
+
+    convertAccepted.addEventListener('click', () => {
+        resultContainer.innerHTML = `<div>${spinner}</div>`
+        alert('Converting Accepted applications to Residents')
+
+        fetch('../php/applicationProcess.php?convert=true')
+        .then(data => {
+            alert(data)
+        })
+        .catch(error => {
+            console.log(`ERROR HAS OCCURRED`)
             console.log(`ERROR: ${error}`)
             alert('Failed to load Applications')
         })

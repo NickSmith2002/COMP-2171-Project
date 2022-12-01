@@ -99,6 +99,13 @@ class ApplicationModel extends DB {
         $stmt->execute();
     }
 
+    protected function changeToResidents() {
+        $stmt = $this->connect()->prepare("INSERT INTO Residents (`First Name`, `Last Name`, `Middle Initial`, DOB, Nationality, Gender, `Marital Status`, `Family Type`, `Home Address`, `Mailing Address`, `Email Address`, `Phone Number`, `ID Number`, `Contact Name`, `Contact Relationship`, `Contact Telephone`, `Contact Address`, `Contact Email`, `Level of Study`, `Year of Study`, `Programme Name`, `Faculty Name`, `Name of School`) 
+                                           SELECT `First Name`, `Last Name`, `Middle Initial`, DOB, Nationality, Gender, `Marital Status`, `Family Type`, `Home Address`, `Mailing Address`, `Email Address`, `Phone Number`, `ID Number`, `Contact Name`, `Contact Relationship`, `Contact Telephone`, `Contact Address`, `Contact Email`, `Level of Study`, `Year of Study`, `Programme Name`, `Faculty Name`, `Name of School` 
+                                           FROM Applicants 
+                                           WHERE Applicants.Status = 'Accepted';");
+    }
+
     protected function addApplication($firstName, $lastName, $middleInitial, $DOB, $nationality, 
                                       $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
                                       $emailAddress, $idNumber, $contactName, $contactRelationship, 

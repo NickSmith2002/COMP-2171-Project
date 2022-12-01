@@ -80,6 +80,8 @@ class ResidentModel extends DB {
     }
 
 
+
+    
     protected function addResident($firstName, $lastName, $middleInitial, $residentID, $position, $DOB, $nationality, 
                                    $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
                                    $emailAddress, $idNumber, $contactName, $contactRelationship, 

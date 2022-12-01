@@ -70,4 +70,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         $id = filter_input(INPUT_GET, 'details', FILTER_SANITIZE_STRING);
         echo $appView->printApplication($id);
     }
+
+    if(isset($_GET['convert'])){
+        if($_GET['convert']=='true')
+        {
+            $appControl = new ApplicationController();
+            $appControl->changeAcceptedToResidents();
+            echo "Changed Accepted Applications to Residents";
+        }
+    }
 }

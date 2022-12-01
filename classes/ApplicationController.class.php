@@ -15,6 +15,10 @@ class ApplicationController extends ApplicationModel {
         $this->deleteApplication($applicationID);
     }
 
+    public function changeAcceptedToResidents() {
+        $this->changeToResidents();
+    }
+
     public function addNewApplication($firstName, $lastName, $middleInitial, $DOB, $nationality, 
         $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
         $emailAddress, $idNumber, $contactName, $contactRelationship, 
