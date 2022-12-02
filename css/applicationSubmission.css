@@ -1,0 +1,58 @@
+h1{
+    border: 20px;
+    margin:20px;
+    padding: 30px;
+    background-color: rgb(30, 25, 109);
+    color: darkgrey;
+}
+
+body{
+    margin: 0;
+    height: 100%;
+    background-color: rgb(241, 241, 241);
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mainContent{
+    background-color: white;
+    box-shadow: 0 0 5px rgb(184, 184, 184);
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+h3{
+    font-weight: 200;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(26, 23, 23);
+}
+td{
+    font-weight: 100;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(26, 23, 23);
+}
+h2, h3, h4, h5, p{
+    margin: 0;
+}
+
+p{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button{
+    cursor: pointer;
+}
+
+/******HEADER******/
+header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1{
+    font-size: 30px;
+}
