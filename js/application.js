@@ -54,13 +54,15 @@ window.onload = function() {
     const instruno = document.getElementById('playno');
 
 
+    const submitBtn = document.querySelector('#submit')
+    let fetchParameters
 
 
     nextButton.addEventListener("click", function(element){
         element.preventDefault();
         form.classList.add("hidden");
         review.classList.remove("hidden");
-        review.innerHTML += `First Name: ${Fname.value}<br>
+        review.innerHTML = `First Name: ${Fname.value}<br>
         Middle Initial(s): ${midinitial.value}<br>
         Last Name: ${Lname.value}<br>
         Identification Number: ${ID.value}<br>`
@@ -138,6 +140,34 @@ window.onload = function() {
     })
 
 
+    submitBtn.addEventListener('click', ()=>{
+        let genderParam
+        gender.forEach(genderitem => {
+            if(genderitem.checked){
+                if(genderitem.classList.contains("Male")){
+                    genderParam = "Male"
+                }
+                else{
+                    genderParam = "Female"
+                }
+            }
+        })
+
+        fetch(`../php/submitApplication.php?fname=${Fname.value}&lname=${Lname.value}&mname=${midinitial.value}&id=${ID.value}&gender=${genderParam}&email=${email.value}&nationality=${nationality.value}&roompref=${mate.value}`)
+        .then(response => {
+            if(response.ok){return response.text()}
+            else{return Promise.reject('Something was wrong with fetch request!')}
+        })
+        .then(data => {
+            alert(data)
+
+        })
+        .catch(error => {
+            window.location.replace("../html/ConnectionError.html");
+            alert('LOAD FAILED')
+        })
+
+    })
 }
 
 

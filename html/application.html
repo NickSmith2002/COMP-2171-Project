@@ -7,12 +7,14 @@
 
     <link rel="stylesheet" href="application.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="../js/applicationSubmission.js"></script>
+    <script src="../js/application.js"></script>
     <link rel="stylesheet" href="../css/applicationSubmission.css">
+    
 
 </head>
 <body>
-    <form>
+    <form name="Application" method="post" action="../php/submitApplication.php">
+
     <header>
         <h1>George Alleyne Hall's Application Form</h1>
         <p>Hi!</p>
@@ -58,8 +60,8 @@
                     Gender:
                 </td>
                 <td>
-                    <input type ="radio" name = "gender" value = "Male">Male
-                    <input type = "radio" name = "gender"  value = "Female">Female
+                    <input type ="radio" name = "gender" value = "Male" class="Male">Male
+                    <input type = "radio" name = "gender"  value = "Female" class="Female">Female
                 </td>
             </tr>
             <tr>
@@ -127,10 +129,13 @@
                     In which family type do you fall?
                 </td>
                 <td>
-                    <input type = "radio" name ="famtype" id = "singparent" value = "Single Parent">Single Parent
-                    <input type = "radio" name ="famtype" id = "nuclear" value = "Nuclear">Nuclear
-                    <input type = "radio" name ="famtype" id = "extended" value = "Extended">Extended
-                    <input type = "radio" name ="famtype" id = "sibling" value = "Sibling Type">Sibling type
+                    <select id = "family">
+                        <option disabled hidden selected></option>
+                        <option value = "Nuclear">Nuclear</option>
+                        <option value = "Single Parent">Single Parent</option>
+                        <option value = "Extended">Extended</option>
+                        <option value = "Sibling Type">Sibling Type</option>
+                    </select>
                 </td>
             </tr>
             <tr>
@@ -138,8 +143,11 @@
                     Do you have children?
                 </td>
                 <td>
-                    <input type = "radio" name ="numchildren" id = "childrenyes">Yes
-                    <input type = "radio" name ="numchildren" id = "childrenno">No
+                    <select id = "numchildren">
+                        <option disabled hidden selected>Select</option>
+                        <option value = "yes">Yes</option>
+                        <option value = "no">No</option>
+                    </select>
                 </td>
             </tr>
             </table>
@@ -217,9 +225,12 @@
                     Please indicate what applies to you:
                 </td>
                 <td>
-                    <input type = "radio" name = "levelofstudy" value = "Undergraduate">Undergraduate
-                    <input type = "radio" name = "levelofstudy" value = "Postgraduate">Postgraduate
-                    <input type = "radio" name = "levelofstudy" value = "Norman Manley Law">Norman Manley Law
+                    <select id = "levelofstudy">
+                        <option disabled hidden selected>Select</option>
+                        <option value = "Undergraduate">Undergraduate</option>
+                        <option value = "Postgraduate">Postgraduate</option>
+                        <option value = "Norman Manley Law">Norman Manley Law</option>
+                    </select>
                 </td>
             </tr>
             <tr>
@@ -227,12 +238,15 @@
                     Year of study:
                 </td>
                 <td>
-                    <input type = "radio" name = "yearofstudy" value = "First">First
-                    <input type = "radio" name = "yearofstudy" value = "Second">Second
-                    <input type = "radio" name = "yearofstudy" value = "Third">Third
-                    <input type = "radio" name = "yearofstudy" value= "Fourth">Fourth
-                    <input type = "radio" name = "yearofstudy" value = "Final">Final
+                    <select id = "yearofstudy">
+                        <option disabled hidden selected>Select</option>
+                        <option value = "First">First</option>
+                        <option value = "Second">Second</option>
+                        <option value = "Third">Third</option>
+                        <option value = "Fourth">Fourth</option>
+                        <option value = "Final">Final</option>
 
+                    </select>
                 </td>
             </tr>
             <tr>
@@ -370,14 +384,15 @@
             </tr>
         </table>
         <button type = "review" class="btn" id = "review">Next</button>
-    </form>
+   </form>
+
     <div class = "reviewForm hidden">
         <h1>Review Application</h1>
 
     </div>
     <div class = "submitarea">
         <button type="submit" class ="btn" id ="submit"> Submit</button>
-    </div>
-
+              
+    </div> 
 </body>
 </html>
