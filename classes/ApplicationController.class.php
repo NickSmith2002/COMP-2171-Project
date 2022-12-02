@@ -19,20 +19,12 @@ class ApplicationController extends ApplicationModel {
         $this->changeToResidents();
     }
 
-    public function addNewApplication($firstName, $lastName, $middleInitial, $DOB, $nationality, 
-        $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
-        $emailAddress, $idNumber, $contactName, $contactRelationship, 
-        $contactTelephone, $contactAddress, $contactEmail, $levelOfStudy, 
-        $yearOfStudy, $programmeName, $facultyName, $nameOfSchool, 
-        $roomType, $roommatePref)
+    public function addNewApplication($firstName, $lastName, $middleInitial, $nationality, 
+        $gender, $emailAddress, $idNumber, $roommatePref)
     {
         $this->addApplication(
-                                $firstName, $lastName, $middleInitial, $DOB, $nationality, 
-                                $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
-                                $emailAddress, $idNumber, $contactName, $contactRelationship, 
-                                $contactTelephone, $contactAddress, $contactEmail, $levelOfStudy, 
-                                $yearOfStudy, $programmeName, $facultyName, $nameOfSchool, 
-                                $roomType, $roommatePref
+                                $firstName, $lastName, $middleInitial, $nationality, 
+                                $gender, $emailAddress, $idNumber, $roommatePref
                             );
     }
 }
