@@ -87,3 +87,9 @@ CREATE TABLE `Notices` (
 );
 
 /*===================== INSERTING VALUES IN TABLES=================================== */
+INSERT INTO `Users` (`ID`, `Username`, `Password`) VALUES
+(1, 'Nick', '876'),
+(2, 'Briony', '876'),
+(3, 'leon', '876'),
+(7, 'Dennis', 'passwordpasswordpassword'),
+(11, 'Mickyle', 'passwordpasswordpassword');
