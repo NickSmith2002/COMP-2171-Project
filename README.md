@@ -1,6 +1,6 @@
 ![Banner](images/Branding/repoBanner.jpg)
 # George Alleyne Hall Web Application
-This is a software Engineering project for COMP2171 Software Engineering course
+This is a software Engineering project for COMP2171 Object Oriented Design and Implementation course
 
 ## Contributors
 | Name | Socials |
