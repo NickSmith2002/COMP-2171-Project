@@ -1,16 +1,26 @@
 <?php
 
-class UserController extends UserModel {
+require_once 'UserModel.class.php';
+
+class UserController{
+
+    private $model;
+
+    function __construct()
+    {
+        $this->model = new UserModel();
+    }
     
+
     public function createUser($id, $username, $password) {
-        $this->addUser($id, $username, $password);
+        $this->model->addUser($id, $username, $password);
     }
 
 
     public function findUser($data) {
-        $user = $this->getUserByID($data);
+        $user = $this->model->getUserByID($data);
         if (count($user) == 0){
-            $user = $this->getUserByName(($data));
+            $user = $this->model->getUserByName(($data));
         }
         return $user;
     }
