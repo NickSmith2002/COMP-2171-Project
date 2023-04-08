@@ -2,7 +2,7 @@
 
 class ApplicationModel extends DB {
     
-    protected function getApplication($data) {
+    public function getApplication($data) {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE ApplicationID = :id");
         $stmt->bindValue(':id', $data, PDO::PARAM_STR);
         $stmt->execute();
@@ -28,7 +28,7 @@ class ApplicationModel extends DB {
         return $result;
     }
 
-    protected function getAllApplications() {
+    public function getAllApplications() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants");
         $stmt->execute();
 
@@ -36,7 +36,7 @@ class ApplicationModel extends DB {
         return $result;
     }
 
-    protected function getAcceptedApplications() {
+    public function getAcceptedApplications() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE Status = 'Accepted'");
         $stmt->execute();
 
@@ -44,7 +44,7 @@ class ApplicationModel extends DB {
         return $result;
     }
     
-    protected function getRejectedApplications() {
+    public function getRejectedApplications() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE Status = 'Rejected'");
         $stmt->execute();
 
@@ -52,7 +52,7 @@ class ApplicationModel extends DB {
         return $result;
     }
 
-    protected function getPendingApplications() {
+    public function getPendingApplications() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants WHERE Status = 'Pending'");
         $stmt->execute();
 
@@ -61,14 +61,14 @@ class ApplicationModel extends DB {
     }
 
     //SORTING FUNCTIONS
-    protected function getAllAscendingID() {
+    public function getAllAscendingID() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants ORDER BY ApplicationID ASC");
         $stmt->execute();
 
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-    protected function getAllDescendingID() {
+    public function getAllDescendingID() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants ORDER BY ApplicationID DESC");
         $stmt->execute();
 
@@ -76,14 +76,14 @@ class ApplicationModel extends DB {
         return $result;
     }
 
-    protected function getAllAscendingName() {
+    public function getAllAscendingName() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants ORDER BY `First Name` ASC");
         $stmt->execute();
 
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-    protected function getAllDescendingName() {
+    public function getAllDescendingName() {
         $stmt = $this->connect()->prepare("SELECT * FROM Applicants ORDER BY `First Name` DESC");
         $stmt->execute();
 
@@ -91,7 +91,7 @@ class ApplicationModel extends DB {
         return $result;
     }
 
-    protected function changeStatus($newStatus, $applicationID) {
+    public function changeStatus($newStatus, $applicationID) {
         $stmt = $this->connect()->prepare("UPDATE Applicants SET Status = :status WHERE ApplicationID = :id");
         $stmt->bindValue(':status', $newStatus, PDO::PARAM_STR);
         $stmt->bindValue(':id', $applicationID, PDO::PARAM_STR);
@@ -99,14 +99,14 @@ class ApplicationModel extends DB {
         $stmt->execute();
     }
 
-    protected function changeToResidents() {
+    public function changeToResidents() {
         $stmt = $this->connect()->prepare("INSERT INTO Residents (`First Name`, `Last Name`, `Middle Initial`, DOB, Nationality, Gender, `Marital Status`, `Family Type`, `Home Address`, `Mailing Address`, `Email Address`, `Phone Number`, `ID Number`, `Contact Name`, `Contact Relationship`, `Contact Telephone`, `Contact Address`, `Contact Email`, `Level of Study`, `Year of Study`, `Programme Name`, `Faculty Name`, `Name of School`) 
                                            SELECT `First Name`, `Last Name`, `Middle Initial`, DOB, Nationality, Gender, `Marital Status`, `Family Type`, `Home Address`, `Mailing Address`, `Email Address`, `Phone Number`, `ID Number`, `Contact Name`, `Contact Relationship`, `Contact Telephone`, `Contact Address`, `Contact Email`, `Level of Study`, `Year of Study`, `Programme Name`, `Faculty Name`, `Name of School` 
                                            FROM Applicants 
                                            WHERE Applicants.Status = 'Accepted';");
     }
 
-    protected function addApplication($firstName, $lastName, $middleInitial, $nationality, 
+    public function addApplication($firstName, $lastName, $middleInitial, $nationality, 
                                       $gender,
                                       $emailAddress, $idNumber, $roommatePref) {
         //Add default status of Pending to status
@@ -125,7 +125,7 @@ class ApplicationModel extends DB {
         $stmt->execute();
     }
 
-    protected function deleteApplication($applicationID) {
+    public function deleteApplication($applicationID) {
         $stmt = $this->connect()->prepare("DELETE FROM Applicants WHERE ApplicationID = $applicationID;");
         $stmt->execute();
     }

@@ -1,7 +1,5 @@
 <?php
 
-require_once 'UserModel.class.php';
-
 class UserController{
 
     private $model;
