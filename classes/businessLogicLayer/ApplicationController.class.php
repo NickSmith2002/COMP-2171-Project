@@ -1,28 +1,35 @@
 <?php
 
-class ApplicationController extends ApplicationModel {
+class ApplicationController {
+
+    private $model;
+
+    function __construct()
+    {
+        $this->model = new ApplicationModel();
+    }
 
     public function findApplication($applicationID) {
-        $application = $this->getApplication($applicationID);
+        $application = $this->model->getApplication($applicationID);
         return $application;
     }
 
     public function changeApplicationStatus($newStatus, $applicationID) {
-        $this->changeStatus($newStatus, $applicationID);
+        $this->model->changeStatus($newStatus, $applicationID);
     }
 
     public function removeApplication($applicationID) {
-        $this->deleteApplication($applicationID);
+        $this->model->deleteApplication($applicationID);
     }
 
     public function changeAcceptedToResidents() {
-        $this->changeToResidents();
+        $this->model->changeToResidents();
     }
 
     public function addNewApplication($firstName, $lastName, $middleInitial, $nationality, 
         $gender, $emailAddress, $idNumber, $roommatePref)
     {
-        $this->addApplication(
+        $this->model->addApplication(
                                 $firstName, $lastName, $middleInitial, $nationality, 
                                 $gender, $emailAddress, $idNumber, $roommatePref
                             );

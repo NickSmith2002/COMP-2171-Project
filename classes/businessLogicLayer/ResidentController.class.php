@@ -1,35 +1,42 @@
 <?php
 
-class ResidentController extends ResidentModel {
+class ResidentController {
+
+    private $model;
+
+    function __construct()
+    {
+        $this->model = new ResidentModel();
+    }
 
     public function findResidentByID($id) {
-        return $this->getResidentById($id);
+        return $this->model->getResidentById($id);
     }
 
     public function findResidentByName($name) {
-        return $this->getResidentsByName($name);
+        return $this->model->getResidentsByName($name);
     }
 
     public function findResidentByEmail($email) {
-        return $this->getResidentByEmail($email);
+        return $this->model->getResidentByEmail($email);
     }
 
     public function findAllResidents() {
-        return $this->getAllResidents();
+        return $this->model->getAllResidents();
     }
 
     public function changeResidentRoom($newRoomNumber, $residentID){
-        return $this->changeRoom($newRoomNumber, $residentID);
+        return $this->model->changeRoom($newRoomNumber, $residentID);
     }
 
     public function removeResident($id){
-        return $this->deleteResident($id);
+        return $this->model->deleteResident($id);
     }
 
     public function changeResident($id,$data){
         if(!empty($this->findResidentbyID($id))){
             echo "Resident successfully updated";
-            return $this->updateResident($id,$data);
+            return $this->model->updateResident($id,$data);
         }
         else{
             echo "Update failed.No resident found/invalid ID type";
@@ -44,7 +51,7 @@ class ResidentController extends ResidentModel {
                                    $yearOfStudy, $programmeName, $facultyName, $nameOfSchool, 
                                    $roomNumber)
     {
-        $this->addResident($firstName, $lastName, $middleInitial, $residentID, $position, $DOB, $nationality, 
+        $this->model->addResident($firstName, $lastName, $middleInitial, $residentID, $position, $DOB, $nationality, 
         $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
         $emailAddress, $idNumber, $contactName, $contactRelationship, 
         $contactTelephone, $contactAddress, $contactEmail, $levelOfStudy, 

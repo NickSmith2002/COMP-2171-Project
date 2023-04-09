@@ -2,7 +2,7 @@
 
 class ResidentModel extends DB {
 
-    protected function getResidentById($id) {
+    public function getResidentById($id) {
         $stmt = $this->connect()->prepare("SELECT * FROM Residents WHERE `Resident ID` = :id OR `ID Number` = :id");
         $stmt->bindValue(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
@@ -11,7 +11,7 @@ class ResidentModel extends DB {
         return $result;
     }
 
-    protected function getResidentsByName($name) {
+    public function getResidentsByName($name) {
         //Note that this retrieves can multiple residents
         $name = explode(' ', $name); //Splits string into array by spaces
 
@@ -36,7 +36,7 @@ class ResidentModel extends DB {
         }
     }
 
-    protected function getResidentByEmail($email) {
+    public function getResidentByEmail($email) {
         $stmt = $this->connect()->prepare("SELECT * FROM Residents WHERE Email Address = :email");
         $stmt->bindValue(':id', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -45,7 +45,7 @@ class ResidentModel extends DB {
         return $result;
     }
 
-    protected function getAllResidents() {
+    public function getAllResidents() {
         $stmt = $this->connect()->prepare("SELECT * FROM Residents");
         $stmt->execute();
 
@@ -53,7 +53,7 @@ class ResidentModel extends DB {
         return $result;
     }
 
-    protected function getResidentsColumns($columns){
+    public function getResidentsColumns($columns){
         $stmt = $this->connect()->prepare("SELECT $columns FROM Residents");
         $stmt->execute();
         
@@ -61,7 +61,7 @@ class ResidentModel extends DB {
         return $result;
     }
 
-    protected function getResidentTable_present(){
+    public function getResidentTable_present(){
         $stmt = $this->connect()->prepare("SELECT `Resident ID`,Position,`First Name`, `Last Name`, `Middle Initial`,Gender, `Phone Number`, `Email Address`, `Room Number` FROM Residents");
         $stmt->execute();
         
@@ -69,7 +69,7 @@ class ResidentModel extends DB {
         return $result;
     }
 
-    protected function getResidentAdvisorTable_present(){
+    public function getResidentAdvisorTable_present(){
         $stmt = $this->connect()->prepare("SELECT `Resident ID`,Position,`First Name`, `Last Name`, `Middle Initial`,Gender, `Phone Number`, `Email Address`, `Room Number` FROM Residents WHERE Position = \"Resident Advisor\"");
         $stmt->execute();
         
@@ -77,7 +77,7 @@ class ResidentModel extends DB {
         return $result;
     }
     
-    protected function getBlockRepTable_present(){
+    public function getBlockRepTable_present(){
         $stmt = $this->connect()->prepare("SELECT `Resident ID`,Position,`First Name`, `Last Name`, `Middle Initial`,Gender, `Phone Number`, `Email Address`, `Room Number` FROM Residents WHERE Position = \"Block Representative\"");
         $stmt->execute();
         
@@ -85,7 +85,7 @@ class ResidentModel extends DB {
         return $result;
     }
 
-    protected function getStandardResidentTable_present(){
+    public function getStandardResidentTable_present(){
         $stmt = $this->connect()->prepare("SELECT `Resident ID`,Position,`First Name`, `Last Name`, `Middle Initial`,Gender, `Phone Number`, `Email Address`, `Room Number` FROM Residents WHERE Position = \"Resident\"");
         $stmt->execute();
         
@@ -93,7 +93,7 @@ class ResidentModel extends DB {
         return $result;
     }
     
-    protected function getBlockResidents($columns, $block){
+    public function getBlockResidents($columns, $block){
         $stmt = $this->connect()->prepare("SELECT * FROM Residents INNER JOIN Rooms ON Residents.`Room Number` = Rooms.`Room Number` WHERE Rooms.Block = \"$block\"");
         $stmt->execute();
         
@@ -101,19 +101,19 @@ class ResidentModel extends DB {
         return $result;
     }
 
-    protected function changeRoom ($newRoomNumber, $residentID) {
+    public function changeRoom ($newRoomNumber, $residentID) {
         $stmt = $this->connect()->prepare("UPDATE Residents SET Room Number = $newRoomNumber WHERE `Resident ID` = $residentID;");
         $stmt->execute();
     }
 
-    protected function deleteResident($id) {
+    public function deleteResident($id) {
         $stmt = $this->connect()->prepare("DELETE FROM Residents WHERE `Resident ID` = $id; DELETE FROM Users WHERE ID = $id;");
         
         $stmt->execute();
 
     }
 
-    protected function updateResident($id, $data){
+    public function updateResident($id, $data){
         $stmt = $this->connect()->prepare("UPDATE Residents SET $data WHERE `Resident ID` = $id");
         $stmt->execute();
     }
@@ -121,7 +121,7 @@ class ResidentModel extends DB {
 
 
     
-    protected function addResident($firstName, $lastName, $middleInitial, $residentID, $position, $DOB, $nationality, 
+    public function addResident($firstName, $lastName, $middleInitial, $residentID, $position, $DOB, $nationality, 
                                    $gender, $maritialStatus, $familyType, $homeAddress, $mailingAddress, 
                                    $emailAddress, $idNumber, $contactName, $contactRelationship, 
                                    $contactTelephone, $contactAddress, $contactEmail, $levelOfStudy, 

@@ -2,7 +2,7 @@
 
 class UserModel extends DB {
 
-    protected function getUserByName($username) {
+    public function getUserByName($username) {
         $stmt = $this->connect()->prepare("SELECT ID, Username, `First Name`, `Last Name`, `Position`, Password FROM Users INNER JOIN Residents ON Users.ID = Residents.`Resident ID` WHERE Users.Username = :username");
         $stmt->bindValue(':username', $username, PDO::PARAM_STR);
         $stmt->execute();
@@ -11,7 +11,7 @@ class UserModel extends DB {
         return $result;
     }
 
-    protected function getUserByID($ID) {
+    public function getUserByID($ID) {
         $stmt = $this->connect()->prepare("SELECT ID, Username, `First Name`, `Last Name`, `Position`, Password FROM Users INNER JOIN Residents ON Users.ID = Residents.`Resident ID` WHERE Users.ID = :id");
         $stmt->bindValue(':id', $ID, PDO::PARAM_STR);
         $stmt->execute();
@@ -20,7 +20,7 @@ class UserModel extends DB {
         return $result;
     }
 
-    protected function getAllUsers() {
+    public function getAllUsers() {
         $stmt = $this->connect()->prepare("SELECT ID, Username, `First Name`, `Last Name`FROM Users INNER JOIN Residents ON Users.ID = Residents.`Resident ID`");
         $stmt->execute();
 
@@ -29,7 +29,7 @@ class UserModel extends DB {
     }
 
 
-    protected function addUser($ID, $username, $password){
+    public function addUser($ID, $username, $password){
         $stmt = $this->connect()->prepare("INSERT INTO Users (ID, Username, Password) VALUES (:id, :username, :password)");
         $stmt->bindValue(':id', $ID, PDO::PARAM_STR);
         $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -37,7 +37,7 @@ class UserModel extends DB {
         $stmt->execute();
     }
 
-    protected function deleteUser(){
+    public function deleteUser(){
         
     }
 }
