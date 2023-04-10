@@ -88,11 +88,18 @@ CREATE TABLE `Notices` (
 
 /*===================== INSERTING VALUES IN TABLES=================================== */
 INSERT INTO `Users` (`ID`, `Username`, `Password`) VALUES
-(1, 'Nick', '876'),
-(2, 'Briony', '876'),
-(3, 'leon', '876'),
-(7, 'Dennis', 'passwordpasswordpassword'),
-(11, 'Mickyle', 'passwordpasswordpassword');
+(1, 'Alexia', '876'),
+(2, 'Kimberly', '876'),
+(3, 'Leon', '876'),
+(5, 'Khayla', 'passwordpasswordpassword'),
+(6, 'Ash', 'passwordpasswordpassword');
+
+INSERT INTO `Residents` (`First Name`, `Last Name`, `Middle Initial`, `Resident ID`, `Position`, `DOB`, `Nationality`, `Gender`, `Marital Status`, `Family Type`, `Home Address`, `Mailing Address`, `Email Address`, `Phone Number`, `ID Number`, `Contact Name`, `Contact Relationship`, `Contact Telephone`, `Contact Address`, `Contact Email`, `Level of Study`, `Year of Study`, `Programme Name`, `Faculty Name`, `Name of School`, `Room Number`) VALUES
+('Alexia', 'Brooks', 'B.', 1, 'Standard Resident', '2022-11-16', 'Jamaican', 'Female', 'Single', 'Nuclear', 'somewhere', 'somewhere', 'AlexiaB@yahoo.com', '18764357890', 245677088, 'someone', 'Sister', 768905462, 'somewhere', 'someone@yahoo.com', 'Graduate', 'First Year', 'something', 'sci tech', 'uwi', 'L-001'),
+('Kimberly', 'Laughton', 'C.', 2, 'Block Representative', '2002-10-23', 'German', 'Female', 'Married', 'Single', 'Somewhere\r\nSomewhere else\r\nSomewhere again', 'Somewhere\r\nSomewhere else\r\nSomewhere again', 'email@aafaffsafs.com', '18765549981', 215125125, 'Mary', 'Father', 1876000022, 'Somewhere\r\nSomewhere else\r\nSomewhere again', 'asasfasf@agawsgag.com', 'Undergraduate', '2', 'Medicine', 'Science and Technology', 'University of the West Indies', 'G-001'),
+('Leon', 'Fray', 'C.', 3, 'Resident Advisor', '1993-03-03', 'Trinidadian', 'Male', 'Divorced', 'Nuclear', 'somewhere', 'somewhere', 'LeonCF@yahoo.com', '18765568907', 6754839, 'someone', 'brother', 876564790, 'somewhere', 'someone@yahoo.com', 'Undergraduate', 'second year', 'Computer Science', 'Sci Tech', 'Uwi', 'L-001'),
+('Khayla', 'Malcolm', 'P.', 5, 'Resident Advisor', '2013-03-04', 'Jamaican', 'Female', 'Single', 'Nuclear', 'Somewhere', 'Somewhere', 'khayla.malcolm@email.com', '1254673245', 96759364, 'Karen Malcolm', 'Mother', 135136366, 'Somewhere', 'Somewhere', 'Undergraduate', '1', 'Chemistry', 'Science and Technology', 'University of Mexico', 'P-003'),
+('Ash', 'Ketchum', 'P.', 6, 'Resident', '1999-03-10', 'Kanton', 'Male', 'Single', 'Single-parent', 'Pallet Town', 'Pallet Town', 'ash.ketchum@email.com', '957504733', 95476130, 'Pikachu', 'Pokemon', 1111, 'Ash\'s pokeball', 'pikachu@email.com', 'Undergraduate', '10', 'Pokemonology', 'Pokemon League', 'Pallet University', 'P-003');
 
 INSERT INTO `Applicants` (`ApplicationID`, `Status`, `First Name`, `Last Name`, `Middle Initial`, `DOB`, `Nationality`, `Gender`, `Marital Status`, `Family Type`, `Home Address`, `Mailing Address`, `Email Address`, `ID Number`, `Contact Name`, `Contact Relationship`, `Contact Telephone`, `Contact Address`, `Contact Email`, `Level of Study`, `Year of Study`, `Programme Name`, `Faculty Name`, `Name of School`, `Room Type`, `Roommate Preference`) VALUES
 (1, 'Accepted', 'Randolph', 'Colleer', 'M.', '2002-11-05', 'Jamaican', 'Male', 'Married', 'Single-Parent', '22 Deanery Rd Kingston 3', '5 Wainwright Ave Kingston 8', 'mark.fray@email.com', '333333', 'Megan Fray', 'Mother', '1111111', '5 Wainwright Ave Kingston 8', 'meganfray@gmail.com', 'Undergraduate', '3', 'BSc Physics', 'Science and Technology', 'University of the West Indies', 'Single-Parent', 'Mark'),
@@ -138,3 +145,9 @@ INSERT INTO `Rooms` (`Room Number`, `Room Type`, `Block`, `Availability Status`,
 ('P-008', 'Single', 'Pardus', 'Available', null, null),
 ('P-009', 'Single', 'Pardus', 'Available', null, null),
 ('P-010', 'Single', 'Pardus', 'Available', null, null);
+
+INSERT INTO `Notices` (`id`, `author`, `post_date`, `title`, `date`, `time`, `location`, `description`) VALUES
+(1, 5, '2023-03-22', ' Rat infestation issue', '0000-00-00', 'N/A', 'N/A', 'The place is infested with a lot of rats.'),
+(2, 5, '2023-03-23', 'Washroom closure', '2023-03-22', '10:00 PM', 'Washroom', 'The washroom will be closed until March 23 for maintenance.'),
+(3, 5, '2023-03-23', 'Applications for Accommodation are now open', '2023-03-15', '9:00 AM', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam eleifend elit, non consequat augue aliquam ut. Donec eget iaculis erat. Nulla at vestibulum nibh. Ut rhoncus volutpat urna eu viverra. Nullam interdum, justo id aliquet vulputate, urna sem mollis tortor, vel sagittis est orci non nunc. Morbi ultricies imperdiet ipsum, tempus tempor leo placerat ac. Mauris et ante egestas, ultrices lorem quis, aliquam quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla consectetur eleifend odio, vel viverra sapien pellentesque id. Etiam fringilla nisl a convallis pharetra. Donec et sem et lectus scelerisque consectetur. Nam nec maximus quam, ut aliquam mi.\r\nQuisque in dui ac turpis convallis tempor in sed urna. Curabitur rhoncus lacus vitae ullamcorper luctus. Aliquam pretium lacinia leo, eget dictum tellus ullamcorper vel. Aenean suscipit metus nibh, eget vestibulum tortor semper a. Nulla auctor sem sed sapien elementum pellentesque. Sed consectetur.');
+
