@@ -27,8 +27,9 @@ if(!isset($_SESSION['id'])){
    <div class="grid">
       <img src="../images/Branding/logo.png" alt="Logo">
       <div class="buttons">
+         <a href="../html/application.html">Submit an Application</a> 
          <a href="../html/processApplication.html">Applications</a> 
-         <a href="../html/roomAssignment.html">Room Assignmet</a>
+         <a href="../html/roomAssignment.html">Room Assignment</a>
          <a href="../html/residentUpdate.html">Residents</a>
          <a href="../php/event.php">Notice Board</a>
          <a href="../php/records.php">Edit Notices</a>
